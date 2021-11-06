@@ -9,10 +9,44 @@
 </head>
 
 <body>
-  <h1>welcome</h1>
-  
-
+  <div class="wrapper">
+    <!-- start of wrapper class -->
+    <header>
+    <!-- start of header section -->
+      <h1>Game of Thrones Quote Trivia</h1>
+      <!-- username input text field-->
+      <label for="username"></label>
+      <input type="text" name="username" id="username" required>
+      <button type="button" id="playButton">play</button>
+      <!-- end of username input text field -->
+    </header>
+    <!-- end of header section -->
+    <section id="quizSection">
+    <!-- start of Quiz section -->
+      <p id="usernameOutput">Username:</p>
+      <div class="quote">
+        <p>Who said:</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam et nam quasi quibusdam at reiciendis, distinctio culpa suscipit. Ea, vitae?</p>
+      </div>
+      <div class="characterChoiceContainer">
+        <!-- container for the character cards and character choices --> 
+        <img class="character1" src="http://placekitten.com/200/300" alt="">
+        <!-- character #1 -->
+        <img src="http://placekitten.com/200/300" alt="" class="character2">
+        <!-- character #2 -->
+        <img src="http://placekitten.com/200/300" alt="" class="character3">
+        <!-- character #3 -->
+        <img src="http://placekitten.com/200/300" alt="" class="character4">
+        <!-- character #4 -->
+      </div>
+      <!-- end of container for the characters -->
+      <button class="nextButton">next</button>
+    </section>
+    <!-- end of Quiz section -->
+  </div>
+  <!-- end of wrapper -->
   <script src="./index.js"></script>
+  <!-- JavaScript link -->
 </body>
 
 </html>
