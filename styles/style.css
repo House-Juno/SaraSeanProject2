@@ -234,3 +234,28 @@ html {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+h1 {
+  color: white;
+}
+
+h1, header {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+header {
+  min-height: 50vh;
+  background-image: url(../assets/headerBackground.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+}
