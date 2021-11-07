@@ -250,7 +250,7 @@ h1, header {
 }
 
 header {
-  min-height: 50vh;
+  min-height: 60vh;
   background-image: url(../assets/headerBackground.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -258,4 +258,8 @@ header {
 
 h1 {
   text-align: center;
+}
+
+label {
+  color: white;
 }

@@ -10,21 +10,25 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <!-- start of wrapper class -->
-    <header>
+  <!-- start of wrapper class -->
+  <header>
+      <div class="wrapper">
     <!-- start of header section -->
-      <h1>Game of Thrones Quote Trivia</h1>
-      <!-- username input text field-->
-      <div class="input">
-        <label for="username"></label>
-        <input type="text" name="username" id="username" required>
-        <button type="button" id="playButton">play</button>
+        <h1>Game of Thrones Quote Trivia</h1>
+        <!-- username input text field-->
+        <div class="input">
+          <label for="username">Enter your name</label>
+          <input type="text" name="username" id="username" required>
+          <button type="button" id="playButton">play</button>
+        </div>
       </div>
         <!-- end of username input text field -->
     </header>
     <!-- end of header section -->
     <section id="quizSection">
+      <div class="wrapper">
+
+      
     <!-- start of Quiz section -->
       <p id="usernameOutput">Username:</p>
       <div class="quote">
@@ -33,20 +37,30 @@
       </div>
       <div class="characterChoiceContainer">
         <!-- container for the character cards and character choices --> 
-        <img class="character1" src="characterPics/jonSnow.webp" alt="">
+        <div class="card active">
+          <img class="characterimg" src="characterPics/jonSnow.webp" alt="">
+        </div>
         <!-- character #1 -->
-        <img src="./characterPics/jaimeLannister.webp" alt="" class="character2">
-        <!-- character #2 -->
-        <img src="./characterPics/sansaStark.webp" alt="" class="character3">
-        <!-- character #3 -->
-        <img src="./characterPics/aryaStark.webp" alt="" class="character4">
-        <!-- character #4 -->
+        <div class="card active">
+          <img src="./characterPics/jaimeLannister.webp" alt="" class="characterimg">
+        </div>  
+          <!-- character #2 -->
+        <div class="card active">
+          <img src="./characterPics/sansaStark.webp" alt="" class="characterimg">
+        </div>   
+          <!-- character #3 -->
+        <div class="card active">
+          <img src="./characterPics/aryaStark.webp" alt="" class="characterimg">
+        </div>
+          <!-- character #4 -->
       </div>
       <!-- end of container for the characters -->
       <button class="nextButton">next</button>
+
+    </div>
     </section>
     <!-- end of Quiz section -->
-  </div>
+  
   <!-- end of wrapper -->
   <script src="./index.js"></script>
   <!-- JavaScript link -->
