@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Game of Thrones Quotes Trivia</title>
+</head>
+
+<body>
+  <!-- start of wrapper class -->
+  <header>
+      <div class="wrapper">
+    <!-- start of header section -->
+        <h1>Game of Thrones Quote Trivia</h1>
+        <!-- username input text field-->
+        <div class="input">
+          <label for="username">Enter your name</label>
+          <input type="text" name="username" id="username" required>
+          <button type="button" id="playButton">play</button>
+        </div>
+      </div>
+        <!-- end of username input text field -->
+    </header>
+    <!-- end of header section -->
+    <section id="quizSection">
+      <div class="wrapper">
+
+      
+    <!-- start of Quiz section -->
+      <p id="usernameOutput">Username:</p>
+      <div class="quote">
+        <p>Who said:</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam et nam quasi quibusdam at reiciendis, distinctio culpa suscipit. Ea, vitae?</p>
+      </div>
+      <div class="characterChoiceContainer">
+        <!-- container for the character cards and character choices --> 
+        <div class="card active">
+          <img class="characterimg" src="characterPics/jonSnow.webp" alt="">
+        </div>
+        <!-- character #1 -->
+        <div class="card active">
+          <img src="./characterPics/jaimeLannister.webp" alt="" class="characterimg">
+        </div>  
+          <!-- character #2 -->
+        <div class="card active">
+          <img src="./characterPics/sansaStark.webp" alt="" class="characterimg">
+        </div>   
+          <!-- character #3 -->
+        <div class="card active">
+          <img src="./characterPics/aryaStark.webp" alt="" class="characterimg">
+        </div>
+          <!-- character #4 -->
+      </div>
+      <!-- end of container for the characters -->
+      <button class="nextButton">next</button>
+
+    </div>
+    </section>
+    <!-- end of Quiz section -->
+  
+  <!-- end of wrapper -->
+  <script src="./index.js"></script>
+  <!-- JavaScript link -->
+</body>
+
+</html>

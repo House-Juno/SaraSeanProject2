@@ -1,0 +1,25 @@
+//remove default padding and margin
+h1, header {
+  padding: 0;
+  margin: 0;
+}
+
+
+// wrapper style
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+//header style
+header {
+  min-height: 60vh;
+  background-image: url(../assets/headerBackground.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+//button style
+button {
+}
