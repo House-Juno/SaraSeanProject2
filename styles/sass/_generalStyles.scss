@@ -1,19 +1,46 @@
 //remove default padding and margin
+<<<<<<< HEAD
 h1, header {
+=======
+h1, header, p {
+>>>>>>> 742a1a4398d498ab4efc5135cee7d9928b846551
   padding: 0;
   margin: 0;
 }
 
+<<<<<<< HEAD
+=======
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+//body style
+section {
+background-image: url(../assets/backgroundImg4.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+min-height: 100vh;
+}
+>>>>>>> 742a1a4398d498ab4efc5135cee7d9928b846551
 
 // wrapper style
 .wrapper {
   max-width: 1400px;
   margin: 0 auto;
+<<<<<<< HEAD
+=======
+  width: 95%;
+>>>>>>> 742a1a4398d498ab4efc5135cee7d9928b846551
 }
 
 //header style
 header {
+<<<<<<< HEAD
   min-height: 60vh;
+=======
+  min-height: 100vh;
+>>>>>>> 742a1a4398d498ab4efc5135cee7d9928b846551
   background-image: url(../assets/headerBackground.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,4 +49,9 @@ header {
 
 //button style
 button {
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 742a1a4398d498ab4efc5135cee7d9928b846551

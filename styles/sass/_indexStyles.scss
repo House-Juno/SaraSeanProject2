@@ -1,7 +1,94 @@
+<<<<<<< HEAD
 h1 {
+=======
+
+//header styles
+
+h1 {
+  padding: 550px 0 200px 0;
   text-align: center;
 }
 
 label {
   color: white;
 }
+
+header {
+>>>>>>> 742a1a4398d498ab4efc5135cee7d9928b846551
+  text-align: center;
+}
+
+label {
+<<<<<<< HEAD
+  color: white;
+}
+=======
+  display: block;
+}
+
+//quote section styles
+
+section {
+  text-align: center;
+}
+
+#usernameOutput{
+padding: 50px;
+}
+
+//quote
+
+
+//character image styles
+.quizSection {
+  display: flex;
+}
+
+
+
+.characterChoiceContainer {
+  display: flex;
+  border: black solid 5px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  
+}
+
+.card {
+  background-image: url(../assets/cardBackground.jpg);
+  background-size: cover;
+  border-radius: 15px;
+  margin: 25px 15px;
+  width: 300px;
+  height: 500px;
+  padding: 40px;
+  
+  
+}
+
+.characterChoiceContainer img{
+  height: 380px;
+  width: 400px;
+  
+  object-fit: cover;
+  clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+  filter: drop-shadow(5px 10px 10px black);
+}
+
+
+.card p {
+  margin: 0 auto;
+  width: 75%;
+  border: black 3px solid;
+  background-color: black;
+  color: white;
+  border-style: outset;
+
+}
+
+
+
+
+>>>>>>> 742a1a4398d498ab4efc5135cee7d9928b846551
