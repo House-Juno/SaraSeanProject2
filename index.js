@@ -79,9 +79,12 @@ app.shuffle = (a)=> {
     }
 }
 // render questions
+app.index = 0
 app.renderQuestion=()=>{
     console.log('rendering')
-    console.log(app.questionArray)
+    console.log(    app.questionArray[app.index].randomCharacter
+        )
+        const
 }
 
 
