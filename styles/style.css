@@ -235,13 +235,6 @@ html {
   overflow: hidden;
 }
 
-<<<<<<< HEAD
-h1 {
-  color: white;
-}
-
-h1, header {
-=======
 html {
   font-size: 62.5%;
 }
@@ -260,20 +253,10 @@ label {
 }
 
 h1, header, p {
->>>>>>> 742a1a4398d498ab4efc5135cee7d9928b846551
   padding: 0;
   margin: 0;
 }
 
-<<<<<<< HEAD
-.wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-header {
-  min-height: 60vh;
-=======
 img {
   max-width: 100%;
   height: auto;
@@ -294,24 +277,18 @@ section {
 
 header {
   min-height: 100vh;
->>>>>>> 742a1a4398d498ab4efc5135cee7d9928b846551
   background-image: url(../assets/headerBackground.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 h1 {
-<<<<<<< HEAD
-=======
   padding: 550px 0 200px 0;
->>>>>>> 742a1a4398d498ab4efc5135cee7d9928b846551
   text-align: center;
 }
 
 label {
   color: white;
-<<<<<<< HEAD
-=======
 }
 
 header {
@@ -377,5 +354,4 @@ section {
   background-color: black;
   color: white;
   border-style: outset;
->>>>>>> 742a1a4398d498ab4efc5135cee7d9928b846551
 }
