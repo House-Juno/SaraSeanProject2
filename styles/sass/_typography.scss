@@ -9,16 +9,33 @@ body, p {
 
 //font Styles
 
+h1 {
+  font-family: 'Cinzel', serif;
+}
 
+p {
+  font-family: 'Courgette', cursive;
+}
+
+button {
+  font-family: 'Cinzel Decorative', cursive;
+}
 
 //font size
 
 h1{
-  font-size: 10.5rem;
+  font-size: 7rem;
   color: white;
+  font-weight: 700;
 }
 
-label{
-  font-size: 5rem;
+.characterChoiceContainer p{
+  font-size: 2rem;
 }
+
+.quote p, button {
+  font-size: 3rem;
+}
+
+
 

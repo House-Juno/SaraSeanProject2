@@ -244,12 +244,29 @@ body, p {
 }
 
 h1 {
-  font-size: 10.5rem;
-  color: white;
+  font-family: "Cinzel", serif;
 }
 
-label {
-  font-size: 5rem;
+p {
+  font-family: "Courgette", cursive;
+}
+
+button {
+  font-family: "Cinzel Decorative", cursive;
+}
+
+h1 {
+  font-size: 7rem;
+  color: white;
+  font-weight: 700;
+}
+
+.characterChoiceContainer p {
+  font-size: 2rem;
+}
+
+.quote p, button {
+  font-size: 3rem;
 }
 
 h1, header, p {
@@ -277,9 +294,38 @@ section {
 
 header {
   min-height: 100vh;
-  background-image: url(../assets/headerBackground.jpg);
+  background-image: radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  text-shadow: 2px 2px black;
+  width: 200px;
+  height: 80px;
+  padding: 10px;
+  background: radial-gradient(#0b00007e, black), url(../assets/button.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 300px;
+  border-style: outset;
+  -webkit-box-shadow: 0px 15px 10px black;
+          box-shadow: 0px 15px 10px black;
+}
+
+button:hover {
+  border-style: inset;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-transform: scale(95%);
+          transform: scale(95%);
+  color: goldenrod;
+  -webkit-box-shadow: 0px 5px 10px black;
+          box-shadow: 0px 5px 10px black;
 }
 
 header .wrapper {
@@ -301,11 +347,8 @@ header .wrapper {
 }
 
 h1 {
-  text-align: center;
-}
-
-label {
   color: white;
+  text-shadow: 5px 6px black;
 }
 
 header {
@@ -316,12 +359,32 @@ label {
   display: block;
 }
 
-section {
-  text-align: center;
+.input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #usernameOutput {
   padding: 50px;
+}
+
+.quote {
+  width: 75%;
+  margin: 0 auto;
+  padding: 100px 0;
+  background-image: url(../assets/scroll.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.quote p {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .quizSection {
@@ -334,41 +397,83 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: black solid 5px;
-  width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  border: black solid 1px;
+  width: 100%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .card {
   background-image: url(../assets/cardBackground.jpg);
-  background-size: cover;
   border-radius: 15px;
-  margin: 25px 15px;
-  width: 300px;
-  height: 500px;
-  padding: 40px;
+  width: 290px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0px;
 }
 
-.characterChoiceContainer img {
-  height: 380px;
-  width: 400px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
-          clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+.imgWrap {
+  height: 500px;
+  padding: 20px 20px;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-filter: drop-shadow(0px 2px 7px black);
+          filter: drop-shadow(0px 2px 7px black);
   -webkit-filter: drop-shadow(5px 10px 10px black);
           filter: drop-shadow(5px 10px 10px black);
 }
 
-.card p {
-  margin: 0 auto;
-  width: 75%;
-  border: black 3px solid;
-  background-color: black;
+.imgWrap img {
+  height: 87%;
+  width: 90%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+          clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+}
+
+.imgWrap p {
+  margin: 10px auto;
+  width: 90%;
+  border: black 2px outset;
   color: white;
-  border-style: outset;
+  border-radius: 10px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.card:hover {
+  cursor: pointer;
+  -webkit-box-shadow: goldenrod 0px 0px 50px;
+          box-shadow: goldenrod 0px 0px 50px;
+  -webkit-transform: scale(120%);
+          transform: scale(120%);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.imgWrap:hover p {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: goldenrod 0px 0px 10px;
+          box-shadow: goldenrod 0px 0px 10px;
+  background: goldenrod;
+  color: black;
 }

@@ -5,7 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel:wght@700&family=Courgette&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="styles/style.css">
+  
   <title>Game of Thrones Quotes Trivia</title>
 </head>
 
@@ -17,8 +21,8 @@
         <h1>Game of Thrones Quote Trivia</h1>
         <!-- username input text field-->
         <div class="input">
-          <label for="username">Enter your name</label>
-          <input type="text" name="username" id="username" required>
+          <label for="username"></label>
+          <input type="text" name="username" id="username" placeholder="enter name" required>
           <button type="button" id="playButton">play</button>
         </div>
       </div>
@@ -37,32 +41,38 @@
       </div>
       <div class="characterChoiceContainer">
         <!-- container for the character cards and character choices --> 
-        <div class="card active">
-          <img class="characterimg" src="characterPics/Mance.jpg" alt="">
-          <p>Jon Snow</p>
-        </div>
         <!-- character #1 -->
-        
         <div class="card active">
-          <img src="./characterPics/jaime.webp" alt="" class="characterimg">
-          <p>Jaime Lannister</p>
-        </div>  
-          <!-- character #2 -->
-        <div class="card active">
-          <img src="./characterPics/sansa.webp" alt="" class="characterimg">
-          <p>Sansa Stark</p>
-        </div>   
-          <!-- character #3 -->
-        <div class="card active">
-          <img src="./characterPics/arya.webp" alt="" class="characterimg">
-          <p>Arya Stark</p>
+          <div class="imgWrap">
+            <img class="characterimg" src="characterPics/Bran.webp" alt="">
+            <p>Jon Snow</p>
+          </div>  
         </div>
-          <!-- character #4 -->
-      </div>
+        <!-- character #2 -->
+        <div class="card active">
+          <div class="imgWrap">
+            <img src="./characterPics/Petyr.webp" alt="" class="characterimg">
+            <p>Eddard "Ned" Stark</p>
+          </div>
+        </div>  
+        <!-- character #3 -->
+        <div class="card active">
+          <div class="imgWrap">
+            <img src="./characterPics/sansa.webp" alt="" class="characterimg">
+            <p>Sansa Stark</p>
+          </div>  
+        </div>   
+        <!-- character #4 -->
+        <div class="card active">
+          <div class="imgWrap">
+            <img src="./characterPics/arya.webp" alt="" class="characterimg">
+            <p>Arya Stark</p>
+          </div>
+        </div>
       <!-- end of container for the characters -->
-      <button class="nextButton">next</button>
+      </div>
+    <button class="nextButton">next</button>
 
-    </div>
     </section>
     <!-- end of Quiz section -->
   
