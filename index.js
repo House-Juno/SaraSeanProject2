@@ -163,6 +163,7 @@ app.selectChoice = (e)=>{
         e.target.className = 'cardTop incorrect'; 
         const correctDiv = document.getElementById(`${app.currentAnswer}`);
         correctDiv.className = 'cardTop correct'
+        const 
     }
 }
 
