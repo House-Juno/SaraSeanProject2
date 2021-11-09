@@ -109,9 +109,13 @@ app.renderQuestion=()=>{
         // create the cards from the array of choices. 
         choices.forEach(choice => {
             const card = document.createElement('div');
+            const cardTop = document.createElement('div');
+            cardTop.className ='cardTop'
+            card.appendChild(cardTop)
             card.addEventListener('click', app.selectChoice)
             card.className = 'card';
             card.dataset.selected = choice;
+            cardTop.dataset.selected = choice;
     
     
             const imgWrap = document.createElement('div');
@@ -145,14 +149,16 @@ app.renderQuestion=()=>{
     }
 }
 app.selectChoice = (e)=>{
-    // console.log(e.target.dataset.selected)
-    // console.log('currentAnswer: ', app.currentAnswer)
-    console.log(e.target)
-    console.log(e.target.parentNode)
+
+    // check if answer is correct or not: 
+    
+    console.log('e: ', e.target)
     if (e.target.dataset.selected === app.currentAnswer){
         console.log('correct')
+        e.target.className = 'cardTop correct'
     }else {
         console.log('wrong')
+        e.target.className = 'cardTop incorrect'
     }
 }
 

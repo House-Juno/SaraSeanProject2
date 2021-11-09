@@ -495,3 +495,26 @@ label {
   background: goldenrod;
   color: black;
 }
+
+.card {
+  position: relative;
+}
+
+.cardTop {
+  background-color: rgba(0, 255, 255, 0.37);
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.correct {
+  border: 3px solid #00ddfa;
+}
+
+.incorrect {
+  border: 3px solid red;
+}
