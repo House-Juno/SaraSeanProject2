@@ -116,12 +116,13 @@ app.renderQuestion=()=>{
             card.className = 'card';
             card.dataset.selected = choice;
             cardTop.dataset.selected = choice;
+            cardTop.id = choice;
     
     
             const imgWrap = document.createElement('div');
             imgWrap.className = 'imgWrap';
             imgWrap.dataset.selected = choice
-            imgWrap.id = choice
+            // imgWrap.id = choice
             const image = document.createElement('img');
             image.className ='characterimg';
             image.dataset.selected = choice
@@ -152,13 +153,16 @@ app.selectChoice = (e)=>{
 
     // check if answer is correct or not: 
     
-    console.log('e: ', e.target)
+    console.log('e: ', e.target.id)
     if (e.target.dataset.selected === app.currentAnswer){
         console.log('correct')
         e.target.className = 'cardTop correct'
     }else {
         console.log('wrong')
-        e.target.className = 'cardTop incorrect'
+        console.log('app.currentAnswer', app.currentAnswer)
+        e.target.className = 'cardTop incorrect'; 
+        const correctDiv = document.getElementById(`${app.currentAnswer}`);
+        correctDiv.className = 'cardTop correct'
     }
 }
 

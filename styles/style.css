@@ -501,7 +501,7 @@ label {
 }
 
 .cardTop {
-  background-color: rgba(0, 255, 255, 0.37);
+  background-color: transparent;
   border-radius: 15px;
   position: absolute;
   top: 0;
@@ -512,7 +512,7 @@ label {
 }
 
 .correct {
-  border: 3px solid #00ddfa;
+  border: 3px solid #00fa7d;
 }
 
 .incorrect {
