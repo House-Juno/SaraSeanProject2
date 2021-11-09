@@ -4,6 +4,7 @@ app.questionArray = [];
 app.startButton = document.querySelector('#playButton');
 
 app.startButton.addEventListener('click', function(){
+    console.log('play button clicked')
     app.startButton.className='hidden'
     // app.getData()
     // console.log('wait:', app.questionArray)
@@ -79,15 +80,81 @@ app.shuffle = (a)=> {
     }
 }
 // render questions
-app.index = 0
+app.index = 0;
+app.score = 0;
 app.renderQuestion=()=>{
-    console.log('rendering')
-    console.log(    app.questionArray[app.index].randomCharacter
-        )
-        const
+
+    const quizContainer = document.querySelector('.quizContainer');
+    quizContainer.innerHTML = '';
+    const quote = document.querySelector('#quote');
+    if(app.index < app.questionArray.length){
+        console.log('rendering')
+        // console.log(app.questionArray[app.index])
+        // console.log(app.questionArray[app.index].randomQuote);
+        console.log(quote)
+        const quiz = app.questionArray[app.index]
+        const {randomQuote, randomCharacter, choices} = quiz
+        // console.log('randomQuote: ', randomQuote)
+        // console.log('randomCharacter: ', randomCharacter)
+        // console.log('choices: ', choices)
+        quote.textContent = randomQuote;
+        app.currentAnswer = randomCharacter
+    
+        // render the options
+        // call the cards container. 
+        const characterChoiceContainer = document.createElement('div');
+        characterChoiceContainer.className = 'characterChoiceContainer'
+        quizContainer.appendChild(characterChoiceContainer);
+        // characterChoiceContainer.innerHTML = ''
+        // create the cards from the array of choices. 
+        choices.forEach(choice => {
+            const card = document.createElement('div');
+            card.addEventListener('click', app.selectChoice)
+            card.className = 'card';
+            card.dataset.selected = choice;
+    
+    
+            const imgWrap = document.createElement('div');
+            imgWrap.className = 'imgWrap';
+            imgWrap.dataset.selected = choice
+            imgWrap.id = choice
+            const image = document.createElement('img');
+            image.className ='characterimg';
+            image.dataset.selected = choice
+            const imgSrcArray = choice.split(" ");
+            // console.log('img name: ', imgSrcArray[0])
+            image.src = `characterPics/${imgSrcArray[0]}.webp`
+            const p = document.createElement('p');
+            p.textContent = choice;
+            imgWrap.appendChild(image);
+            imgWrap.appendChild(p);
+            card.appendChild(imgWrap)
+            characterChoiceContainer.appendChild(card);
+        });
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'nextButton';
+        nextBtn.textContent = "Next"
+        nextBtn.addEventListener('click', app.renderQuestion)
+        console.log('index: ', app.index)
+        console.log('index: ', app.questionArray.length)
+        app.index = app.index + 1
+        quizContainer.appendChild(nextBtn)
+    } else {
+        quote.textContent = 'your score';
+        quizContainer.innerHTML="<h3> Quiz completed!!</h3>"
+    }
 }
-
-
+app.selectChoice = (e)=>{
+    // console.log(e.target.dataset.selected)
+    // console.log('currentAnswer: ', app.currentAnswer)
+    console.log(e.target)
+    console.log(e.target.parentNode)
+    if (e.target.dataset.selected === app.currentAnswer){
+        console.log('correct')
+    }else {
+        console.log('wrong')
+    }
+}
 
 app.init = ()=>{
     console.log('welcome to our app!');
