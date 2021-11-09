@@ -17,6 +17,7 @@ app.getData = ()=>{
         return response.json();
     })
     .then((data)=>{
+        console.log('what?')
         app.createQuiz(data);
         app.dataArray = [...data]
     })
@@ -163,12 +164,11 @@ app.selectChoice = (e)=>{
         e.target.className = 'cardTop incorrect'; 
         const correctDiv = document.getElementById(`${app.currentAnswer}`);
         correctDiv.className = 'cardTop correct'
-        const 
     }
 }
 
 app.init = ()=>{
     console.log('welcome to our app!');
-    app.getData()
+    app.getData();
 }
 app.init()
