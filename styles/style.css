@@ -248,7 +248,7 @@ h1 {
 }
 
 p {
-  font-family: "Courgette", cursive;
+  font-family: "Playfair Display", serif;
 }
 
 button {
@@ -373,11 +373,16 @@ label {
   padding: 50px;
 }
 
+span {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .quote {
   width: 75%;
   margin: 0 auto;
-  padding: 100px 0;
-  background-image: url(../assets/scroll.png);
+  background: white;
   background-repeat: no-repeat;
   background-size: cover;
 }
