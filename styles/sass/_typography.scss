@@ -22,12 +22,18 @@ button {
   font-family: 'Cinzel Decorative', cursive;
 }
 
-//font size
+//font size, weight and line height 
 
 h1{
   font-size: 7rem;
   color: white;
   font-weight: 700;
+  line-height: 1.6;
+}
+
+.quote {
+  line-height: 1.6;
+  text-shadow: 2px 1px black;
 }
 
 .characterChoiceContainer p{

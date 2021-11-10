@@ -259,6 +259,12 @@ h1 {
   font-size: 7rem;
   color: white;
   font-weight: 700;
+  line-height: 1.6;
+}
+
+.quote {
+  line-height: 1.6;
+  text-shadow: 2px 1px black;
 }
 
 .characterChoiceContainer p {
@@ -280,7 +286,7 @@ img {
 }
 
 section {
-  background-image: url(../assets/backgroundImg4.jpg);
+  background-image: radial-gradient(#ffffff0d, black), url(../assets/newBackground.png);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -348,7 +354,7 @@ header .wrapper {
 
 h1 {
   color: white;
-  text-shadow: 5px 6px black;
+  text-shadow: 3px 3px black;
 }
 
 header {
@@ -370,7 +376,8 @@ label {
 }
 
 #usernameOutput {
-  padding: 50px;
+  position: absolute;
+  left: 0%;
 }
 
 span {
@@ -382,20 +389,15 @@ span {
 .quote {
   width: 75%;
   margin: 0 auto;
-  background: white;
+  text-align: center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: white;
 }
 
 .quote p {
   width: 80%;
   margin: 0 auto;
-}
-
-.quizSection {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .characterChoiceContainer {
@@ -404,7 +406,6 @@ span {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  border: black solid 1px;
   width: 100%;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -418,7 +419,7 @@ span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 10px 0px;
+  margin: 100px 0px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -447,7 +448,7 @@ span {
 }
 
 .imgWrap img {
-  height: 87%;
+  height: 400px;
   width: 90%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -456,7 +457,7 @@ span {
 }
 
 .imgWrap p {
-  margin: 10px auto;
+  margin-top: 20px;
   width: 90%;
   border: black 2px outset;
   color: white;
@@ -467,10 +468,10 @@ span {
 
 .card:hover {
   cursor: pointer;
-  -webkit-box-shadow: goldenrod 0px 0px 50px;
-          box-shadow: goldenrod 0px 0px 50px;
-  -webkit-transform: scale(120%);
-          transform: scale(120%);
+  -webkit-box-shadow: goldenrod 0px 0px 30px 5px;
+          box-shadow: goldenrod 0px 0px 30px 5px;
+  -webkit-transform: scale(115%);
+          transform: scale(115%);
   z-index: 1;
 }
 
@@ -517,9 +518,35 @@ span {
 }
 
 .correct {
-  border: 3px solid #00fa7d;
+  border: 10px solid #00fa7d;
+  background: rgba(0, 250, 125, 0.271);
 }
 
 .incorrect {
-  border: 3px solid red;
+  border: 10px solid red;
+  background: rgba(255, 0, 0, 0.2);
+}
+
+#quizSection .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.nextButton {
+  margin: 40px auto;
+}
+
+@media (max-width: 1374px) {
+  .characterChoiceContainer {
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 250px;
+  }
 }
