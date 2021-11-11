@@ -9,80 +9,69 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel:wght@700&family=Playfair+Display&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="styles/style.css">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" />
   
   <title>Game of Thrones Quotes Trivia</title>
 </head>
 
 <body>
   <!-- start of wrapper class -->
-  <header>
+    <header>
       <div class="wrapper">
-    <!-- start of header section -->
+        <!-- start of header section -->
         <h1>Game of Thrones Quote Trivia</h1>
         <!-- username input text field-->
-        <div class="input">
-          <label for="username"></label>
-          <input type="text" name="username" id="username" placeholder="enter name" required>
-          <button type="button" id="playButton">play</button>
-        </div>
+        <form class="input">
+          <!-- <label for="username"></label> -->
+          <input type="text" name="username" id="username" placeholder="enter  your name" required>
+        </form>
+        <button type="button" id="playButton">play</button>
+
       </div>
-        <!-- end of username input text field -->
+    <!-- end of username input text field -->
     </header>
     <!-- end of header section -->
     <section id="quizSection">
-      <div class="wrapper">
-
-      
-    <!-- start of Quiz section -->
-      <img src="quizBanner.jpg" alt="">
-      <p id="usernameOutput">Username:</p>
-      <div class="quote">
-        <p><span> Who said:</span></p>
-        <p id="quote">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam et nam quasi quibusdam at reiciendis, distinctio culpa suscipit. Ea, vitae?</p>
-      </div>
-      <div class="quizContainer">
-        <div class="characterChoiceContainer">
-          <!-- container for the character cards and character choices --> 
-          <!-- character #1 -->
+      <!-- <div class="wrapper quizHide">
+        <p id="usernameOutput">${userName}</p>
+        <div class="quote">
+            <p><span></span></p>
+            <p id="quote"></p>
+        </div>
+        <div class="quizContainer">
           <div class="card active">
             <div class="imgWrap">
               <img class="characterimg" src="characterPics/Bran.webp" alt="">
               <p>Jon Snow</p>
             </div>  
           </div>
-          <!-- character #2 -->
           <div class="card">
             <div class="imgWrap">
               <img src="./characterPics/Petyr.webp" alt="" class="characterimg">
               <p>Eddard "Ned" Stark</p>
             </div>
           </div>  
-          <!-- character #3 -->
           <div class="card">
             <div class="imgWrap">
               <img src="./characterPics/Sansa.webp" alt="" class="characterimg">
               <p>Sansa Stark</p>
             </div>  
           </div>   
-          <!-- character #4 -->
           <div class="card">
             <div class="imgWrap">
               <img src="./characterPics/Arya.webp" alt="" class="characterimg">
               <p>Arya Stark</p>
             </div>
           </div>
-        <!-- end of container for the characters -->
-        </div>
-      </div>
-      <button class="nextButton"></button>
+        </div> -->
     </div>
-  </section>
-  <!-- end of Quiz section -->
-        
-  <!-- <section>
-    <h4>show score</h4>
 
-  </section> -->
+
+    </section>
+  <!-- end of Quiz section -->
+  <!-- <section><h4>show score</h4></section> -->
   
   <!-- end of wrapper -->
   <script src="./index.js"></script>
@@ -90,3 +79,4 @@
 </body>
 
 </html>
+

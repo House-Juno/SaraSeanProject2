@@ -4,3 +4,6 @@
 @import 'indexStyles.scss';
 @import 'mediaQueries.scss';
 
+html {
+    scroll-behavior: smooth;
+  }

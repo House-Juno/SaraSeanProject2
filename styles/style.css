@@ -286,7 +286,7 @@ img {
 }
 
 section {
-  background-image: radial-gradient(#ffffff0d, black), url(../assets/newBackground.png);
+  background-image: radial-gradient(#00000034, rgba(0, 0, 0, 0.938)), url(../assets/newBackground.png);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -365,7 +365,8 @@ label {
   display: block;
 }
 
-.input {
+form {
+  width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -373,11 +374,18 @@ label {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 10px;
 }
-
-#usernameOutput {
-  position: absolute;
-  left: 0%;
+form input[type=text] {
+  background: rgba(0, 0, 0, 0.575);
+  width: 100%;
+  border-radius: 50px;
+  padding: 20px;
+  margin: 20px auto;
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 2.5rem;
 }
 
 span {
@@ -386,8 +394,12 @@ span {
   margin-bottom: 20px;
 }
 
+#quote {
+  font-style: italic;
+}
+
 .quote {
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   background-repeat: no-repeat;
@@ -396,8 +408,29 @@ span {
 }
 
 .quote p {
-  width: 80%;
   margin: 0 auto;
+}
+
+.quote div {
+  width: 100%;
+  min-height: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(black), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0));
 }
 
 .characterChoiceContainer {
@@ -414,18 +447,21 @@ span {
 
 .card {
   background-image: url(../assets/cardBackground.jpg);
+  background-size: contain;
+  background-position: center;
   border-radius: 15px;
-  width: 290px;
+  width: 262px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 100px 0px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  margin: 50px 0px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  position: relative;
 }
 
 .imgWrap {
-  height: 500px;
+  height: 400px;
   padding: 20px 20px;
   margin: 10px 0;
   display: -webkit-box;
@@ -441,8 +477,6 @@ span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-filter: drop-shadow(0px 2px 7px black);
-          filter: drop-shadow(0px 2px 7px black);
   -webkit-filter: drop-shadow(5px 10px 10px black);
           filter: drop-shadow(5px 10px 10px black);
 }
@@ -502,10 +536,6 @@ span {
   color: black;
 }
 
-.card {
-  position: relative;
-}
-
 .cardTop {
   background-color: transparent;
   border-radius: 15px;
@@ -517,14 +547,29 @@ span {
   z-index: 10;
 }
 
+.incorrectTop {
+  background-color: rgba(0, 0, 0, 0.753);
+}
+
 .correct {
   border: 10px solid #00fa7d;
-  background: rgba(0, 250, 125, 0.271);
+  background: rgba(0, 250, 125, 0.11);
 }
 
 .incorrect {
   border: 10px solid red;
-  background: rgba(255, 0, 0, 0.2);
+  background: rgba(255, 0, 0, 0.116);
+}
+
+#quizSection {
+  padding: 50px;
+  display: none;
+}
+
+.quizHide {
+  visibility: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 #quizSection .wrapper {
@@ -535,10 +580,61 @@ span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+#usernameOutput {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.596)));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.596));
+  color: goldenrod;
+  border-radius: 0px;
+  padding: 10px 30px;
+  position: absolute;
+  top: -20px;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  width: 19%;
+  text-align: right;
+  left: -11%;
+}
+
+#quizNumber {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.596)));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.596));
+  font-size: 3.2rem;
+  color: goldenrod;
+  padding: 10px 30px;
+  position: absolute;
+  top: -20px;
+  right: 1%;
+  text-align: left;
+}
+#quizNumber span {
+  font-size: 1.8rem;
+  display: inline;
 }
 
 .nextButton {
-  margin: 40px auto;
+  margin: 20px auto;
+}
+
+.quizContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 1374px) {
@@ -549,4 +645,7 @@ span {
   .card {
     width: 250px;
   }
+}
+html {
+  scroll-behavior: smooth;
 }
