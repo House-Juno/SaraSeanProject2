@@ -49,8 +49,25 @@ button {
   box-shadow: 0px 15px 10px black;
   transition: 0.2s;
 }
+.restartButton{
+  width: 267px;
+  cursor: pointer;
+  color: white;
+  text-shadow: 2px 2px black;
+  height: 80px;
+  padding: 20px 40px;
+  background: radial-gradient(#0b00007e, black), url(../assets/button.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 300px;
+  border-style: outset;
+  box-shadow: 0px 15px 10px black;
+  transition: 0.2s;
+  margin: 30px auto;
 
-button:hover{
+}
+
+button:hover, .restartButton:hover{
   border-style: inset;
   box-shadow: none;
   transform: scale(95%);

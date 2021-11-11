@@ -1,5 +1,7 @@
 const app = {};
 app.userScore = 0;
+app.correctChoice = 0;
+app.incorrectChoice = 0;
 app.questionArray = [];
 app.startButton = document.querySelector('#playButton');
 
@@ -38,6 +40,8 @@ quizHIder.style.visibility= 'visible'
 })
 // getting data and creating the quiz on load
 app.getData = ()=>{
+    // console.log('is restart working??')
+
     fetch(`https://game-of-thrones-quotes.herokuapp.com/v1/characters`)
     .then(function(response){
         return response.json();
@@ -110,6 +114,8 @@ app.index = 0;
 app.score = 0;
 app.answered = false;
 app.renderQuestion=()=>{
+    // console.log('is restart working??')
+
     const quizContainer = document.querySelector('.quizContainer');
     quizContainer.innerHTML = '';
     const quoteContainer = document.querySelector('.quote');
@@ -121,7 +127,7 @@ app.renderQuestion=()=>{
             <p id="quote"></p>
             </div>
         `
-        const quote = document.querySelector('#quote');
+        const quote = document.getElementById('quote');
         const quizNumber = document.querySelector('#quizNumber');
         quote.innerHTML = ''
         if(app.index < app.questionArray.length){
@@ -174,8 +180,64 @@ app.renderQuestion=()=>{
             console.log('index: ', app.questionArray.length)
             app.index = app.index + 1
         } else {
-            quote.textContent =`your score : ${app.userScore}`;
-            quizContainer.innerHTML="<h3> Quiz completed!!</h3>"
+            const quizSection = document.getElementById('quizSection')
+            // quizSection.style.minHeight='100vh';
+            // quizSection.style.visibility='visible';
+            quizSection.style.display='flex';
+
+            if(app.correctChoice === 5 && app.incorrectChoice === 0){
+                quoteContainer.innerHTML=`
+                <div>
+                    <div id="quote">
+                        <p>Quiz Complete!</p>
+                        <p>Your score : ${app.userScore}</p>
+                        <p>You got ${app.correctChoice} correct</p>
+                        <p>and ${app.incorrectChoice} incorrect</p>
+                        <img src="https://c.tenor.com/xHg7HK_ziuoAAAAC/clapping-leonardo-dicaprio.gif"/>
+                    </div>
+                </div>
+                `
+            }
+            else if(app.correctChoice === 0 && app.incorrectChoice === 5){
+                quoteContainer.innerHTML=`
+                <div>
+                    <div id="quote">
+                        <p>Quiz Complete!</p>
+                        <p>Your score : ${app.userScore}</p>
+                        <p>You got ${app.correctChoice} correct</p>
+                        <p>and ${app.incorrectChoice} incorrect</p>
+                        <img src="https://c.tenor.com/LfIIksaESfIAAAAC/you-can.gif"/>
+                    </div>
+                </div>
+                `
+            }
+            else {
+                quoteContainer.innerHTML=`
+                <div>
+                    <div id="quote">
+                        <p>Quiz Complete!</p>
+                        <p>Your score : ${app.userScore}</p>
+                        <p>You got ${app.correctChoice} correct</p>
+                        <p>and ${app.incorrectChoice} incorrect</p>
+                    </div>
+                </div>
+                `
+            }
+            const restartBtn = document.createElement('button')
+            restartBtn.className = 'restartButton';
+            restartBtn.textContent = 'play again';
+            quoteContainer.appendChild(restartBtn)
+            restartBtn.addEventListener('click', function(){
+                // console.log('is restart working??')
+                // app.userScore = 0;
+                // app.correctChoice = 0;
+                // app.incorrectChoice = 0;
+                // app.questionArray = [];
+                // app.getData();
+                // app.renderQuestion()
+                location.reload()
+            })
+
         }
     }, 100);
 }
@@ -190,9 +252,12 @@ app.selectChoice = (e)=>{
 
 
     // check if answer is correct or not: 
+// if correct
     console.log('e: ', e.target.id)
     if (e.target.dataset.selected === app.currentAnswer){
         // console.log('correct')
+        app.correctChoice = app.correctChoice  + 1;
+
         app.userScore = app.userScore + 10
         e.target.className = 'cardTop correct';
         const allCards = document.querySelectorAll('.card');
@@ -214,7 +279,11 @@ app.selectChoice = (e)=>{
             card.childNodes[0].className = 'cardTop incorrectTop'
         })
     }else {
-        app.userScore = app.userScore + 0
+
+// if incorrect
+
+        app.userScore = app.userScore - 10
+        app.incorrectChoice = app.incorrectChoice + 1;
 
         const correctDiv = document.getElementById(`${app.currentAnswer}`);
         correctDiv.className = 'cardTop correct';
