@@ -10,3 +10,193 @@
     width: 250px;
   }
 }
+@media (max-width: 1200px) {
+
+
+  .card {
+    width: 220px;
+    .imgWrap {
+      height: 370px;
+    }
+  }
+}
+@media (max-width: 1050px) {
+  .quizContainer{
+    width: 80%;
+    margin: 0% auto;
+  }
+
+  .quote {
+    p {
+      font-size: 2.5rem;
+    }
+    div {
+      min-height: 120px;
+    }
+  }
+  .card {
+    width: 262px;
+    margin: 10px 0px;
+    .imgWrap {
+      height: 320px;
+    }
+  }
+}
+@media (max-width: 800px) {
+  .quizContainer{
+    width: 100%;
+    margin: 0% auto;
+  }
+  .card {
+    width: 230px;
+    margin: 10px 0px;
+    .imgWrap {
+      height: 320px;
+      p {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .nextButton {
+    margin: 39px auto;
+}
+
+}
+@media (max-width: 650px) {
+  .quote {
+    p {
+      font-size: 2rem;
+    }
+    div {
+      min-height: 100px;
+    }
+  }
+
+  .card {
+    width: 210px;
+    margin: 10px 0px;
+    .imgWrap {
+      height: 300px;
+      p {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .nextButton {
+    margin: 39px auto;
+}
+.correct {
+  border: 5px solid #00fa7d;
+}
+.incorrect {
+  border: 5px solid red;
+}
+}
+// @media (max-width: 600px) {
+
+
+//   .card {
+//     width: 180px;
+//     margin: 5px 0px;
+//     .imgWrap {
+//       height: 300px;
+//       img {
+//         height: 418px;
+//         width: 100%;
+//       }
+//       p {
+//         width: 100%;
+//         font-size: 1.3rem;
+//       }
+//     }
+//   }
+// }
+@media (max-width: 600px) {
+  form {
+    width: 74%;
+    }
+  h1 {
+    font-size: 5rem;
+    }
+  #usernameOutput {
+    width: 32%;
+    left: -17%;
+    }
+  #quizNumber {
+    right: -13%;
+    top: -26px;
+    }
+  .characterChoiceContainer{
+    flex-direction: column;
+  }
+  .card {
+    width: 90%;
+    margin: 10px auto;
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    .imgWrap {
+      width: 100%;
+      height: 115px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      
+      img {
+        height: 111px;
+        width: 120px;
+        margin-right: 18px;
+        object-position: top;
+      }
+      p {
+        width: 205px;
+        font-size: 2rem;
+        height: 59px;
+        margin: 0 auto;
+        align-items: center;
+        padding-top: 15px;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+
+  #usernameOutput {
+    width: 32%;
+    left: -17%;
+    }
+  #quizNumber {
+    right: -15%;
+    top: -26px;
+    }
+  .characterChoiceContainer{
+    flex-direction: column;
+  }
+  .card {
+    width: 90%;
+    margin: 10px auto;
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    .imgWrap {
+      width: 100%;
+      height: 110px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      
+      img {
+        height: 100px;
+        width: 100px;
+        margin-right: 18px;
+      }
+      p {
+        width: 187px;
+        font-size: 1.8rem;
+        margin: 0 auto;
+        padding-top: 10px;
+
+      }
+    }
+  }
+}

@@ -273,7 +273,8 @@ app.selectChoice = (e)=>{
             if (app.currentAnswer !== card.attributes['data-selected'].value){
                 newArr.push(card) 
             } else {
-                card.style.transform = "scale(1.2)"
+                card.style.transform = "scale(1.1)"
+                card.style.zIndex = 20;
 
             }
         })
@@ -297,7 +298,9 @@ app.selectChoice = (e)=>{
             if (app.currentAnswer !==card.attributes['data-selected'].value){
                 newArr.push(card) 
             } else {
-                card.style.transform = "scale(1.2)"
+                card.style.transform = "scale(1.1)"
+                card.style.zIndex = 20;
+
 
             }
         })
