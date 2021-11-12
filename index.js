@@ -6,16 +6,27 @@ app.questionArray = [];
 app.startButton = document.querySelector('#playButton');
 
 app.startButton.addEventListener('click', ()=>{app.startGame()})
+// document.getElementById("username").onkeydown = function() {myFunction()};
+// const myFunction = (e)=>{
+//     e.preventDefault()
+//     console.log('e: ', e)
+// }
+app.inputEnter = document.getElementById("username");
+app.inputEnter.onkeydown= (e)=>{
+    if (e.keyCode === 13){
+        e.preventDefault()
+        app.startGame()
+    } 
+}
 // app.startButton.addEventListener('click', app.startGame)
 app.startGame = ()=>{
-    console.log('clicking?')
+    console.log('starting game')
     const userName = document.querySelector('input').value
 
     app.startButton.className='hidden';
     const quizSection = document.getElementById('quizSection');
-    // console.log(quizSection)
-    // quizSection.style.minHeight='100vh';
-    // quizSection.style.visibility='visible';
+
+    
     quizSection.style.display='block';
 
     setTimeout(() => {
