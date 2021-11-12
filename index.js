@@ -50,7 +50,8 @@ app.getData = ()=>{
     })
     .then((data)=>{
         app.dataArray = [...data]
-        app.createQuiz(app.dataArray);
+        app.dataArray2 = [...data]
+        app.createQuiz(app.dataArray2);
     })
 }
 app.createQuiz=(data)=>{
@@ -65,19 +66,27 @@ app.createQuestionsArray=(charactersArr)=>{
     const selectedQuestion = {};
     // shufling the array randomly. n
     app.shuffle(charactersArr)
-    
+    let filteringArray = charactersArr.filter(char=>{
+        if (char.quotes.length !== 0){
+            return char
+        }
+    })
     // getting the first choice as selected 
-    if(charactersArr[0].quotes.length>0){
-        app.selectQuestion(charactersArr, selectedQuestion);
-
-        return charactersArr;
-    }else {
+    if(filteringArray[0].quotes.length>0){
+        // console.log('charactersArr[0].quotes.length', filteringArray[0].quotes.length)
+        // console.log('charactersArr[0].quotes.length', filteringArray[0])
+        app.selectQuestion(filteringArray, selectedQuestion);
+        return filteringArray;
+    } else if (filteringArray[0].quotes.length == 0){
+        // console.log('charactersArr[0].quotes.length', filteringArray[0].quotes.length)
         // if no quote is left remove the character from the list
-        charactersArr.splice(0, 1);
+        // console.log('characters: ', filteringArray[0])
+        filteringArray.splice(0, 1);
+        // console.log('charactersArr after splice: ', filteringArray)
 
         // shuffle the array after removing
-        app.shuffle(charactersArr);
-        app.selectQuestion(charactersArr, selectedQuestion)
+        app.shuffle(filteringArray);
+        app.selectQuestion(filteringArray, selectedQuestion)
         return charactersArr;
     }
 }
@@ -128,8 +137,8 @@ app.renderQuestion=()=>{
         const quote = document.getElementById('quote');
         const quizNumber = document.querySelector('#quizNumber');
         quote.innerHTML = ''
-        console.log(app.index )
-        console.log(app.questionArray.length)
+        // console.log(app.index )
+        // console.log(app.questionArray.length)
         if(app.index < app.questionArray.length && app.startOver== false){
             quizNumber.innerHTML = `${app.index + 1} <span> out of </span> ${app.questionArray.length}`
 
@@ -236,8 +245,8 @@ app.restartGame = ()=>{
         const newArr = [...app.dataArray]
         
         app.createQuiz(newArr)
-        console.log('app.questionArray:, ', app.questionArray);
-        console.log('app.questionArray:, ', app.questionArray.length);
+        // console.log('app.questionArray:, ', app.questionArray);
+        // console.log('app.questionArray:, ', app.questionArray.length);
         
         const quizContainer = document.querySelector('.quizContainer');
         quizContainer.innerHTML = '';
@@ -300,8 +309,6 @@ app.selectChoice = (e)=>{
             } else {
                 card.style.transform = "scale(1.1)"
                 card.style.zIndex = 20;
-
-
             }
         })
         newArr.forEach(card=>{
