@@ -153,7 +153,6 @@ app.renderQuestion=()=>{
                 cardTop.dataset.selected = choice;
                 cardTop.id = choice;
         
-        
                 const imgWrap = document.createElement('div');
                 imgWrap.className = 'imgWrap';
                 imgWrap.dataset.selected = choice;
@@ -230,6 +229,9 @@ app.restartGame = ()=>{
         app.questionArray = [];
         app.index = 0;
         app.score = 0;
+        const quizSection = document.getElementById('quizSection')
+        quizSection.style.display='block';
+
 
         const newArr = [...app.dataArray]
         
