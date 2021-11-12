@@ -5,12 +5,15 @@ app.incorrectChoice = 0;
 app.questionArray = [];
 app.startButton = document.querySelector('#playButton');
 
-app.startButton.addEventListener('click', function(){
-
+app.startButton.addEventListener('click', ()=>{app.startGame()})
+// app.startButton.addEventListener('click', app.startGame)
+app.startGame = ()=>{
+    console.log('clicking?')
     const userName = document.querySelector('input').value
 
     app.startButton.className='hidden';
-    const quizSection = document.getElementById('quizSection')
+    const quizSection = document.getElementById('quizSection');
+    // console.log(quizSection)
     // quizSection.style.minHeight='100vh';
     // quizSection.style.visibility='visible';
     quizSection.style.display='block';
@@ -37,10 +40,9 @@ quizHIder.style.visibility= 'visible'
         app.renderQuestion(quizSection);
         
     }, 800);
-})
+}
 // getting data and creating the quiz on load
 app.getData = ()=>{
-    // console.log('is restart working??')
 
     fetch(`https://game-of-thrones-quotes.herokuapp.com/v1/characters`)
     .then(function(response){
@@ -48,19 +50,16 @@ app.getData = ()=>{
     })
     .then((data)=>{
         app.dataArray = [...data]
-        app.createQuiz(data);
+        app.createQuiz(app.dataArray);
     })
 }
 app.createQuiz=(data)=>{
     // console.log('data: ', data)
     let charactersArr= data;
     let gettingArr = app.createQuestionsArray(charactersArr);
-    for(l=1; l<=4; l++){
+    for(l=1; l<=5; l++){
         app.createQuestionsArray(gettingArr)
     }
-    // setTimeout(() => {
-    //     app.printOutFirst(app.questionArray)
-    // }, 300);
 }
 app.createQuestionsArray=(charactersArr)=>{
     const selectedQuestion = {};
@@ -112,9 +111,8 @@ app.shuffle = (a)=> {
 // render questions
 app.index = 0;
 app.score = 0;
-app.answered = false;
+app.startOver = false;
 app.renderQuestion=()=>{
-    // console.log('is restart working??')
 
     const quizContainer = document.querySelector('.quizContainer');
     quizContainer.innerHTML = '';
@@ -130,10 +128,11 @@ app.renderQuestion=()=>{
         const quote = document.getElementById('quote');
         const quizNumber = document.querySelector('#quizNumber');
         quote.innerHTML = ''
-        if(app.index < app.questionArray.length){
+        console.log(app.index )
+        console.log(app.questionArray.length)
+        if(app.index < app.questionArray.length && app.startOver== false){
             quizNumber.innerHTML = `${app.index + 1} <span> out of </span> ${app.questionArray.length}`
-            console.log('rendering')
-            console.log(quote)
+
             const quiz = app.questionArray[app.index]
             const {randomQuote, randomCharacter, choices} = quiz
             quote.textContent = `"${randomQuote}"`;
@@ -157,13 +156,11 @@ app.renderQuestion=()=>{
         
                 const imgWrap = document.createElement('div');
                 imgWrap.className = 'imgWrap';
-                imgWrap.dataset.selected = choice
-                // imgWrap.id = choice
+                imgWrap.dataset.selected = choice;
                 const image = document.createElement('img');
                 image.className ='characterimg';
                 image.dataset.selected = choice
                 const imgSrcArray = choice.split(" ");
-                // console.log('img name: ', imgSrcArray[0])
                 image.src = `characterPics/${imgSrcArray[0]}.webp`
                 const p = document.createElement('p');
                 p.textContent = choice;
@@ -172,20 +169,14 @@ app.renderQuestion=()=>{
                 card.appendChild(imgWrap)
                 characterChoiceContainer.appendChild(card);
             });
-            // const nextBtn = document.createElement('button');
-            // nextBtn.className = 'nextButton';
-            // nextBtn.textContent = "Next"
-            // nextBtn.addEventListener('click', app.renderQuestion)
-            console.log('index: ', app.index)
-            console.log('index: ', app.questionArray.length)
+
+            
             app.index = app.index + 1
         } else {
+            app.startOver= true
             const quizSection = document.getElementById('quizSection')
-            // quizSection.style.minHeight='100vh';
-            // quizSection.style.visibility='visible';
             quizSection.style.display='flex';
-
-            if(app.correctChoice === 5 && app.incorrectChoice === 0){
+            if(app.correctChoice === app.questionArray.length && app.incorrectChoice === 0){
                 quoteContainer.innerHTML=`
                 <div>
                     <div id="quote">
@@ -198,7 +189,7 @@ app.renderQuestion=()=>{
                 </div>
                 `
             }
-            else if(app.correctChoice === 0 && app.incorrectChoice === 5){
+            else if(app.correctChoice === 0 && app.incorrectChoice === app.questionArray.length){
                 quoteContainer.innerHTML=`
                 <div>
                     <div id="quote">
@@ -227,19 +218,28 @@ app.renderQuestion=()=>{
             restartBtn.className = 'restartButton';
             restartBtn.textContent = 'play again';
             quoteContainer.appendChild(restartBtn)
-            restartBtn.addEventListener('click', function(){
-                // console.log('is restart working??')
-                // app.userScore = 0;
-                // app.correctChoice = 0;
-                // app.incorrectChoice = 0;
-                // app.questionArray = [];
-                // app.getData();
-                // app.renderQuestion()
-                location.reload()
-            })
-
+            restartBtn.addEventListener('click', ()=>{app.restartGame()})
         }
     }, 100);
+}
+app.restartGame = ()=>{
+        app.startOver = false;
+        app.userScore = 0;
+        app.correctChoice = 0;
+        app.incorrectChoice = 0;
+        app.questionArray = [];
+        app.index = 0;
+        app.score = 0;
+
+        const newArr = [...app.dataArray]
+        
+        app.createQuiz(newArr)
+        console.log('app.questionArray:, ', app.questionArray);
+        console.log('app.questionArray:, ', app.questionArray.length);
+        
+        const quizContainer = document.querySelector('.quizContainer');
+        quizContainer.innerHTML = '';
+        app.renderQuestion()
 }
 app.selectChoice = (e)=>{
     const quizContainer = document.querySelector('.quizContainer');
@@ -253,7 +253,7 @@ app.selectChoice = (e)=>{
 
     // check if answer is correct or not: 
 // if correct
-    console.log('e: ', e.target.id)
+    // console.log('e: ', e.target.id)
     if (e.target.dataset.selected === app.currentAnswer){
         // console.log('correct')
         app.correctChoice = app.correctChoice  + 1;
