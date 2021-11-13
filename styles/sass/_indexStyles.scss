@@ -80,7 +80,17 @@ span {
   align-content: center;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0));
 }
+.quote h3 {
+  font-size: 4rem;
+  color: goldenrod;
 
+
+}
+.endingUserName{
+  font-size: 4.5rem;
+  text-transform: capitalize;
+  display: inline;
+}
 
 
 //character image styles
@@ -214,22 +224,29 @@ span {
   justify-content: center;
   position: relative;
 }
+.usernameContainer{
+  position: absolute;
+  top: -20px;
+  left: 0%;
+  display: flex;
 
+}
+.bannerLogo{
+  width: 70px;
+  margin-top: -27px;
+  filter: drop-shadow(0 1px 2px #a17913);
 
+}
   #usernameOutput {
-
+    // background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(187, 50, 50, 0.596));
     // background-color: rgba(0, 0, 0, 0.404);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.596));
     color: goldenrod;
     border-radius: 0px;
-    padding: 10px 30px;
-    position: absolute;
-    top: -20px;
+    padding: 10px ;
     text-transform: uppercase;
     font-size: 2.5rem;
     width: 19%;
     text-align: right;
-    left: -11%;
   }
   #quizNumber{
     background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.596));
@@ -258,11 +275,11 @@ margin: 20px auto;
 }
 
 
+
 .houseBannerSect{
   background: black;
   min-height: 100vh;
-  // padding: 50px 0;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -278,7 +295,7 @@ margin: 20px auto;
       text-align: center;
     }
     .houses {
-      width: 70%;
+      width: 80%;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;

@@ -5,23 +5,44 @@ app.incorrectChoice = 0;
 app.questionArray = [];
 app.startButton = document.querySelector('#playButton');
 
-app.startButton.addEventListener('click', ()=>{app.startGame()})
-// document.getElementById("username").onkeydown = function() {myFunction()};
-// const myFunction = (e)=>{
-//     e.preventDefault()
-//     console.log('e: ', e)
-// }
+app.houses =[
+    "Stark", "Targaryen", "Tyrell", "Baratheon", "Lannister", "Bolton", "Greyjoy", "Martell"
+]
+
+app.startButton.addEventListener('click', ()=>{app.scrollToHome()})
+app.scrollToHome=()=>{
+    app.houseSection = document.querySelector('.houses')
+    app.houseBannerSect = document.querySelector('.houseBannerSect');
+    app.houseBannerSect.style.display = 'flex';
+    setTimeout(() => {
+        app.houseBannerSect.scrollIntoView({behavior: 'smooth'});
+        app.houses.forEach(house=>{
+            const img = document.createElement('img');
+            img.src = `./assets/houses/${house}.png`;
+            img.id = house;
+            img.alt =`house ${house} banner`;
+            img.addEventListener('click', app.selectHome)
+            app.houseSection.appendChild(img)
+        })
+    }, 100);
+}
+app.selectHome = (e)=>{
+    console.log(e.target.id);
+    app.userHouse = e.target.id;
+    app.startGame();
+}
+
 app.inputEnter = document.getElementById("username");
 app.inputEnter.onkeydown= (e)=>{
     if (e.keyCode === 13){
         e.preventDefault()
-        app.startGame()
+        app.scrollToHome()
     } 
 }
 // app.startButton.addEventListener('click', app.startGame)
 app.startGame = ()=>{
     console.log('starting game')
-    const userName = document.querySelector('input').value
+    app.userName = document.querySelector('input').value
 
     app.startButton.className='hidden';
     const quizSection = document.getElementById('quizSection');
@@ -32,11 +53,17 @@ app.startGame = ()=>{
     setTimeout(() => {
         quizSection.scrollIntoView({behavior: 'smooth'});
     }, 300);
+    
     // app.getData()
     // console.log('wait:', app.questionArray)
+    app.houseBannerSect.style.display = 'none';
+
     quizSection.innerHTML = `
     <div class="wrapper quizHide">
-        <p id="usernameOutput">${userName}</p>
+        <div class="usernameContainer">
+            <img class="bannerLogo" src='./assets/houses/${app.userHouse}.png' alt='${app.userHouse} house banner'/>
+            <p id="usernameOutput">${app.userName}</p>
+        </div>
         <p id="quizNumber"></p>
         <div class="quote">
 
@@ -172,7 +199,6 @@ app.renderQuestion=()=>{
                 card.dataset.selected = choice;
                 cardTop.dataset.selected = choice;
                 cardTop.id = choice;
-        
                 const imgWrap = document.createElement('div');
                 imgWrap.className = 'imgWrap';
                 imgWrap.dataset.selected = choice;
@@ -199,6 +225,7 @@ app.renderQuestion=()=>{
                 quoteContainer.innerHTML=`
                 <div>
                     <div id="quote">
+                        <h3><span class="endingUserName">${app.userName}</span> of House ${app.userHouse}</h3>
                         <p>Quiz Complete!</p>
                         <p>Your score : ${app.userScore}</p>
                         <p>You got ${app.correctChoice} correct</p>
@@ -212,7 +239,8 @@ app.renderQuestion=()=>{
                 quoteContainer.innerHTML=`
                 <div>
                     <div id="quote">
-                        <p>Quiz Complete!</p>
+                    <h3><span class="endingUserName">${app.userName}</span> of House ${app.userHouse}</h3>
+                    <p>Quiz Complete!</p>
                         <p>Your score : ${app.userScore}</p>
                         <p>You got ${app.correctChoice} correct</p>
                         <p>and ${app.incorrectChoice} incorrect</p>
@@ -225,7 +253,8 @@ app.renderQuestion=()=>{
                 quoteContainer.innerHTML=`
                 <div>
                     <div id="quote">
-                        <p>Quiz Complete!</p>
+                    <h3><span class="endingUserName">${app.userName}</span> of House ${app.userHouse}</h3>
+                    <p>Quiz Complete!</p>
                         <p>Your score : ${app.userScore}</p>
                         <p>You got ${app.correctChoice} correct</p>
                         <p>and ${app.incorrectChoice} incorrect</p>
@@ -252,12 +281,8 @@ app.restartGame = ()=>{
         const quizSection = document.getElementById('quizSection')
         quizSection.style.display='block';
 
-
         const newArr = [...app.dataArray]
-        
         app.createQuiz(newArr)
-        // console.log('app.questionArray:, ', app.questionArray);
-        // console.log('app.questionArray:, ', app.questionArray.length);
         
         const quizContainer = document.querySelector('.quizContainer');
         quizContainer.innerHTML = '';

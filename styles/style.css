@@ -247,9 +247,9 @@ h1 {
   font-family: "Cinzel", serif;
 }
 
-h2 {
+h2, h3 {
   font-family: "Playfair Display", serif;
-  text-align: c;
+  text-align: center;
 }
 
 p {
@@ -464,6 +464,17 @@ span {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0));
 }
 
+.quote h3 {
+  font-size: 4rem;
+  color: goldenrod;
+}
+
+.endingUserName {
+  font-size: 4.5rem;
+  text-transform: capitalize;
+  display: inline;
+}
+
 .characterChoiceContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -621,19 +632,30 @@ span {
   position: relative;
 }
 
-#usernameOutput {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.596)));
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.596));
-  color: goldenrod;
-  border-radius: 0px;
-  padding: 10px 30px;
+.usernameContainer {
   position: absolute;
   top: -20px;
+  left: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bannerLogo {
+  width: 70px;
+  margin-top: -27px;
+  -webkit-filter: drop-shadow(0 1px 2px #a17913);
+          filter: drop-shadow(0 1px 2px #a17913);
+}
+
+#usernameOutput {
+  color: goldenrod;
+  border-radius: 0px;
+  padding: 10px;
   text-transform: uppercase;
   font-size: 2.5rem;
   width: 19%;
   text-align: right;
-  left: -11%;
 }
 
 #quizNumber {
@@ -675,9 +697,7 @@ span {
 .houseBannerSect {
   background: black;
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -708,7 +728,7 @@ span {
   text-align: center;
 }
 .houseBannerSect .wrapper .houses {
-  width: 70%;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -775,6 +795,20 @@ span {
     height: 320px;
   }
 }
+@media (max-width: 850px) {
+  .usernameContainer {
+    top: -21px;
+    left: -6%;
+  }
+
+  .bannerLogo {
+    width: 60px;
+  }
+
+  #quizNumber {
+    right: -7%;
+  }
+}
 @media (max-width: 800px) {
   .quizContainer {
     width: 100%;
@@ -794,6 +828,13 @@ span {
 
   .nextButton {
     margin: 39px auto;
+  }
+
+  .houseBannerSect .wrapper .houses {
+    width: 90%;
+  }
+  .houseBannerSect .wrapper .houses img {
+    width: 143px;
   }
 }
 @media (max-width: 650px) {
@@ -826,6 +867,10 @@ span {
   .incorrect {
     border: 5px solid red;
   }
+
+  .houseBannerSect .wrapper .houses img {
+    width: 113px;
+  }
 }
 @media (max-width: 600px) {
   form {
@@ -836,14 +881,23 @@ span {
     font-size: 5rem;
   }
 
+  .usernameContainer {
+    top: -28px;
+    left: -12%;
+  }
+
   #usernameOutput {
     width: 32%;
-    left: -17%;
+    font-size: 1.8rem;
+  }
+
+  .bannerLogo {
+    width: 54px;
   }
 
   #quizNumber {
-    right: -13%;
-    top: -26px;
+    right: -9%;
+    top: -44px;
   }
 
   .characterChoiceContainer {
@@ -895,14 +949,14 @@ span {
   }
 }
 @media (max-width: 500px) {
-  #usernameOutput {
-    width: 32%;
-    left: -17%;
+  .usernameContainer {
+    top: -28px;
+    left: -12%;
   }
 
-  #quizNumber {
-    right: -15%;
-    top: -26px;
+  #usernameOutput {
+    width: 32%;
+    font-size: 1.8rem;
   }
 
   .characterChoiceContainer {

@@ -42,6 +42,18 @@
     }
   }
 }
+@media (max-width: 850px) {
+  .usernameContainer {
+    top: -21px;
+    left: -6%;
+    }
+    .bannerLogo {
+    width: 60px;
+    }
+    #quizNumber {
+      right: -7%;
+      }
+}
 @media (max-width: 800px) {
   .quizContainer{
     width: 100%;
@@ -60,6 +72,16 @@
   .nextButton {
     margin: 39px auto;
 }
+.houseBannerSect{
+  .wrapper{
+    .houses {
+      width: 90%;
+    img {
+    width: 143px;
+    }
+    }
+  }
+  }
 
 }
 @media (max-width: 650px) {
@@ -91,26 +113,22 @@
 .incorrect {
   border: 5px solid red;
 }
+// .houseBannerSect .wrapper 
+
+.houseBannerSect{
+
+.wrapper{
+
+  .houses {
+  img {
+  width: 113px;
+  }
+  }
 }
-// @media (max-width: 600px) {
+}
 
+}
 
-//   .card {
-//     width: 180px;
-//     margin: 5px 0px;
-//     .imgWrap {
-//       height: 300px;
-//       img {
-//         height: 418px;
-//         width: 100%;
-//       }
-//       p {
-//         width: 100%;
-//         font-size: 1.3rem;
-//       }
-//     }
-//   }
-// }
 @media (max-width: 600px) {
   form {
     width: 74%;
@@ -118,14 +136,21 @@
   h1 {
     font-size: 5rem;
     }
-  #usernameOutput {
-    width: 32%;
-    left: -17%;
-    }
-  #quizNumber {
-    right: -13%;
-    top: -26px;
-    }
+    .usernameContainer {
+      top: -28px;
+      left: -12%;
+      }
+      #usernameOutput {
+        width: 32%;
+        font-size: 1.8rem;
+        }
+        .bannerLogo {
+          width: 54px;
+        }
+        #quizNumber {
+          right: -9%;
+          top: -44px;
+          }
   .characterChoiceContainer{
     flex-direction: column;
   }
@@ -160,15 +185,16 @@
   }
 }
 @media (max-width: 500px) {
+  .usernameContainer {
+    top: -28px;
+    left: -12%;
+    }
 
   #usernameOutput {
     width: 32%;
-    left: -17%;
+    font-size: 1.8rem;
     }
-  #quizNumber {
-    right: -15%;
-    top: -26px;
-    }
+
   .characterChoiceContainer{
     flex-direction: column;
   }
