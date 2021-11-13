@@ -8,7 +8,6 @@ app.startButton = document.querySelector('#playButton');
 app.houses =[
     "Stark", "Targaryen", "Tyrell", "Baratheon", "Lannister", "Bolton", "Greyjoy", "Martell"
 ]
-
 app.startButton.addEventListener('click', ()=>{app.scrollToHome()})
 app.scrollToHome=()=>{
     app.houseSection = document.querySelector('.houses')
