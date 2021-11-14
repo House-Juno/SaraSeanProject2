@@ -1,12 +1,35 @@
-#credits, #teachers h1, h2{
+header {
+  height: 40vh;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(153, 58, 58, 0)),radial-gradient(#ffffff0d, black) ,url(../assets/headerBackground.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+      font-size: 5rem;
+  }
+}
+
+#credits, #teachers, section{
+  background: #c4c4c4;
+}
+
+
+
+#credits, #teachers, h1, h2{
   text-align: center;
 }
+
 nav {
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   padding: 40px;
+ 
 
   ul {
       width: 70%;
@@ -14,6 +37,8 @@ nav {
       padding: 0;
       display: flex;
       justify-content: space-evenly;
+      
+      
 
       li {
           list-style: none;
@@ -31,11 +56,16 @@ nav {
       }
   }
 }
+
+
+
 h2 {
   color: white;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0)
   );
   padding: 20px;
+  
+  
 
 }
 
@@ -71,7 +101,28 @@ h2 {
 
 #teacher .imgWrap img {
   height: 90%;
-width: 100%;
+  width: 100%;
 
 
+}
+
+
+// hamburger menu bar navigation
+
+.hamburgerMenu{
+  display: none;
+  cursor: pointer;
+  
+  
+}
+
+.bar{
+  transition: 0.5s;
+  display: block;
+  width: 35px;
+  height: 5px;
+  margin: 5px auto;
+  background-color: goldenrod;
+  border-radius: 10px;
+  
 }

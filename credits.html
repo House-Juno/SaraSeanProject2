@@ -11,18 +11,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel:wght@700&family=Playfair+Display&display=swap" rel="stylesheet"> 
 </head>
 <body>
-  <nav>
-    <ul>
+  <header>
+    <h1>Credits</h1>
+    <nav>
+      <ul class="navMenu">
         <li>
             <a href="index.html">Play Game</a>
         </li>
-        <li><a href="./credits.html">Credits</a></li>
+        <li class="current"><a href="./credits.html">Credits</a></li>
         <li><a href="./characters.html">Characters</a></li>
-    </ul>
-  </nav>
+      </ul>
+    <!-- adding hamburger menu -->
+      <div class="hamburgerMenu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
   <section id="credits">
     <div class="wrapper">
-      <h1>Credits</h1>
       <h2>All men must die (except for Sean)</h2>
       <div class="characterChoiceContainer" id="students">
         <!-- <div class="card">
@@ -40,15 +48,16 @@
       </div>
     </div>
   </section>
+
   <section id="teachers">
-    <div class="wrapper">
-      <h1>Special thanks to:</h1>
-      <h2>This is for all the chocolate brownie points!</h2>
-      <div class="characterChoiceContainer" id="teachersContainer">
-        <div class="card">
-            <div class="imgWrap">
-              <img src="http://placekitten.com/200/300" alt="" class="creditPhoto">
-              <p>Colin</p>
+  <div class="wrapper">
+    <h1>Special thanks to:</h1>
+    <h2>This is for all the chocolate brownie points!</h2>
+    <div class="characterChoiceContainer" id="teachersContainer">
+      <div class="card">
+          <div class="imgWrap">
+            <img src="http://placekitten.com/200/300" alt="" class="creditPhoto">
+            <p>Colin</p>
             </div>
           </div>
           <div class="card">
@@ -81,8 +90,8 @@
               <p>Darshana</p>
             </div>
           </div>
-        </div>
-      </div>
+    </div>
+  </div>
 
       <!-- JavaScript Link -->
       <script src="./credits.js"></script>

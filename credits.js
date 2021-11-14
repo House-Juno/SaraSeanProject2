@@ -7,7 +7,7 @@
 
 const studentsArray = [
   
-     "seanSip", "SaraMunir" 
+   "SaraMunir", "seanSip"
 ]
 const teachersArray = [
 
@@ -36,7 +36,7 @@ const renderStudent = () => {
   });
 }
 
-renderStudent()
+// renderStudent()
 
 const renderTeachers = () => {
   teachersArray.forEach(teacher => {
@@ -60,8 +60,17 @@ const renderTeachers = () => {
   });
 }
 
-renderTeachers()
+// renderTeachers()
 
+
+
+const hamburgerMenu = document.querySelector('.hamburgerMenu');
+const navMenu = document.querySelector('.navMenu');
+
+hamburgerMenu.addEventListener("click", () => {
+  hamburgerMenu.classList.toggle("active2");
+  navMenu.classList.toggle("active2");
+})
 
 
 // const creditPhoto = document.getElementById('creditPhoto');
