@@ -51,7 +51,7 @@ app.startGame = ()=>{
 
     setTimeout(() => {
         quizSection.scrollIntoView({behavior: 'smooth'});
-    }, 300);
+    }, 100);
     
     // app.getData()
     // console.log('wait:', app.questionArray)
@@ -76,7 +76,7 @@ quizHIder.style.visibility= 'visible'
     setTimeout(() => {
         app.renderQuestion(quizSection);
         
-    }, 800);
+    }, 100);
 }
 // getting data and creating the quiz on load
 app.getData = ()=>{
@@ -159,7 +159,6 @@ app.index = 0;
 app.score = 0;
 app.startOver = false;
 app.renderQuestion=()=>{
-
     const quizContainer = document.querySelector('.quizContainer');
     quizContainer.innerHTML = '';
     const quoteContainer = document.querySelector('.quote');
@@ -168,7 +167,7 @@ app.renderQuestion=()=>{
         quoteContainer.innerHTML = `
             <p><span>Who Said: </span></p>
             <div>
-            <p id="quote"></p>
+                <p id="quote"></p>
             </div>
         `
         const quote = document.getElementById('quote');
@@ -214,7 +213,6 @@ app.renderQuestion=()=>{
                 characterChoiceContainer.appendChild(card);
             });
 
-            
             app.index = app.index + 1
         } else {
             app.startOver= true
@@ -222,7 +220,7 @@ app.renderQuestion=()=>{
             quizSection.style.display='flex';
             if(app.correctChoice === app.questionArray.length && app.incorrectChoice === 0){
                 quoteContainer.innerHTML=`
-                <div>
+                <div class="quizScoreBoard">
                     <div id="quote">
                         <h3><span class="endingUserName">${app.userName}</span> of House ${app.userHouse}</h3>
                         <p>Quiz Complete!</p>
@@ -236,7 +234,7 @@ app.renderQuestion=()=>{
             }
             else if(app.correctChoice === 0 && app.incorrectChoice === app.questionArray.length){
                 quoteContainer.innerHTML=`
-                <div>
+                <div class="quizScoreBoard">
                     <div id="quote">
                     <h3><span class="endingUserName">${app.userName}</span> of House ${app.userHouse}</h3>
                     <p>Quiz Complete!</p>
@@ -250,7 +248,7 @@ app.renderQuestion=()=>{
             }
             else {
                 quoteContainer.innerHTML=`
-                <div>
+                <div class="quizScoreBoard">
                     <div id="quote">
                     <h3><span class="endingUserName">${app.userName}</span> of House ${app.userHouse}</h3>
                     <p>Quiz Complete!</p>
@@ -266,6 +264,21 @@ app.renderQuestion=()=>{
             restartBtn.textContent = 'play again';
             quoteContainer.appendChild(restartBtn)
             restartBtn.addEventListener('click', ()=>{app.restartGame()})
+            const buttonsCntr = document.createElement('div')
+            buttonsCntr.className="buttonContainer"
+
+            const creditBtn = document.createElement('a');
+            const historyBtn = document.createElement('a');
+            
+            historyBtn.innerHTML='History'
+            historyBtn.href='History.html'
+            creditBtn.innerHTML='Credit'
+            creditBtn.href='Credit.html'
+
+            buttonsCntr.appendChild(historyBtn)
+            buttonsCntr.appendChild(creditBtn)
+
+            quoteContainer.appendChild(buttonsCntr)
         }
     }, 100);
 }
@@ -290,15 +303,19 @@ app.restartGame = ()=>{
 app.selectChoice = (e)=>{
     const quizContainer = document.querySelector('.quizContainer');
     const nextBtn = document.createElement('button');
+    const nextBtnArrow = document.createElement('button');
     nextBtn.className = 'nextButton';
-    nextBtn.textContent = "Next"
+    nextBtn.textContent = "Next";
+    nextBtnArrow.className = 'nextBtnMedia';
+    nextBtnArrow.innerHTML = '<i class="fas fa-chevron-right"></i>'
 
+    nextBtnArrow.addEventListener('click', app.renderQuestion)
     nextBtn.addEventListener('click', app.renderQuestion)
     quizContainer.appendChild(nextBtn)
-
-
+    quizContainer.appendChild(nextBtnArrow)
+    
     // check if answer is correct or not: 
-// if correct
+    // if correct
     // console.log('e: ', e.target.id)
     if (e.target.dataset.selected === app.currentAnswer){
         // console.log('correct')

@@ -41,6 +41,24 @@
       height: 320px;
     }
   }
+  .buttonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 70%;
+    margin: 10px auto;
+  }
+  .nextBtnMedia{
+    // width: 50px;
+    // height: 121px;
+    // position: absolute;
+    // top: 30%;
+    // right: -87px;
+    display: block;
+  }
+  .nextButton{
+    display: none;
+  }
 }
 @media (max-width: 850px) {
   .usernameContainer {
@@ -54,24 +72,28 @@
       right: -7%;
       }
 }
-@media (max-width: 800px) {
+@media (max-width: 807px) {
+  .nextBtnMedia{
+    top: 43%;
+    right: -21px;
+  }
   .quizContainer{
     width: 100%;
     margin: 0% auto;
   }
   .card {
-    width: 230px;
+    width: 225px;
     margin: 10px 0px;
     .imgWrap {
-      height: 320px;
+      height: 309px;
       p {
         font-size: 1.6rem;
       }
     }
   }
-  .nextButton {
-    margin: 39px auto;
-}
+//   .nextButton {
+//     margin: 39px auto;
+// }
 .houseBannerSect{
   .wrapper{
     .houses {
@@ -126,6 +148,13 @@
   }
 }
 }
+.buttonContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 10px auto;
+}
 
 }
 
@@ -155,8 +184,9 @@
     flex-direction: column;
   }
   .card {
-    width: 90%;
-    margin: 10px auto;
+    width: 88%;
+    // margin: 10px auto;
+    margin-right: auto;
     background-position: center;
     background-size: cover;
     align-items: center;
@@ -183,6 +213,9 @@
       }
     }
   }
+  .nextBtnMedia {
+    right: -34px;
+    }
 }
 @media (max-width: 500px) {
   .usernameContainer {
