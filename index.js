@@ -270,8 +270,8 @@ app.renderQuestion=()=>{
             const creditBtn = document.createElement('a');
             const historyBtn = document.createElement('a');
             
-            historyBtn.innerHTML='History'
-            historyBtn.href='History.html'
+            historyBtn.innerHTML='Characters'
+            historyBtn.href='characters.html'
             creditBtn.innerHTML='Credit'
             creditBtn.href='Credit.html'
 

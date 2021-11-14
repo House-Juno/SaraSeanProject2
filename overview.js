@@ -1,5 +1,6 @@
 const app ={}
 
+// the api did not include enough information. so we are joing two api's together. the second api only pulled characters based on id. so we had to go into the documentaion to find out which ids the characters belonged to.
 app.charactersArr = [
     {
         name: "Jon Snow",
@@ -117,6 +118,8 @@ app.charactersArr = [
         id:1666
     }
     ]
+
+// first get all the characters featured in the quiz app
 app.getCharacters=()=>{
     fetch(`https://game-of-thrones-quotes.herokuapp.com/v1/characters`)
     .then(function(response){
@@ -130,24 +133,23 @@ app.getCharacters=()=>{
         app.dataArray2.forEach(character => {
             app.charactersArr.forEach(cc=>{
                 if (cc.name === character.name){
-                    let newObje = {...character}
-                    newObje.id = cc.id
-                    newObje.imgName = cc.imgName
-                    app.newArray.push(newObje)
+                    // combining the two arrays together to provide ids to call
+                    let newObject = {...character}
+                    newObject.id = cc.id
+                    newObject.imgName = cc.imgName
+                    app.newArray.push(newObject)
                 }
             })
         });
-        console.log('new Array: ', app.newArray)
         app.renderArray(app.newArray)
     })
-
 }
 app.renderArray = (array)=>{
     const charactersArray= document.getElementById('charactersArray')
     array.forEach(arr=>{
         let object
+        // some of the characters is missing the house key
         if (arr.house){
-
             object = {
                 id : arr.id, 
                 imgName : arr.imgName,
@@ -162,8 +164,9 @@ app.renderArray = (array)=>{
                 house : 'Unknown'
             }
         }
+        // pringting out all the characters in the dom
         const card = document.createElement('div');
-        card.className = "myCard"
+        card.className = "myCard";
         card.id = arr.id
         card.innerHTML = `
             <div class="cardTop">
@@ -172,18 +175,15 @@ app.renderArray = (array)=>{
             </div>
             <img src="./characterPics/${arr.imgName}.webp" alt="" class="characterimg">
             `
-            // <p>${arr.name}</p>
         charactersArray.appendChild(card);
         card.addEventListener('click', ()=>{app.selectCard(object)})
     })
 }
 app.selectCard = (object)=>{
-    // console.log('e', id)
     fetch(`https://anapioficeandfire.com/api/characters/${object.id}`)
     .then(function(response){
         return response.json();
     }).then((data)=>{
-        // console.log(data, imgName);
         app.renderProfile(data, object)
     })
 }
@@ -210,10 +210,7 @@ app.renderProfile=(data, object)=>{
         <p><span>Aliases:</span> ${data.aliases.join(', ')}</p>
         <p><span>Quotes:</span></p>
     `
-    // <div class="characterDetail">
-    //     ${object.quotes}
-    //     <ul class="quotes>
-            
+
     const ul = document.createElement('ul')
     object.quotes.forEach(quote=>{
         const li = document.createElement('li')
@@ -228,19 +225,6 @@ app.renderProfile=(data, object)=>{
     bodyHistory.appendChild(profileModalWindow);
     // console.log(object)
 
-    // }, 200);
-
-    /* 
-        <div class="profileModalWindow">
-        <div class="profileModal">
-            <img src="./characterPics/Jon.webp" alt="">
-            <div>
-                <h3>Jon Snow</h3>
-            </div>
-        </div>
-
-        </div>
-    */
 }
 app.myFunction= ()=>{
     const profileModalWindow = document.querySelector('.profileModalWindow');
