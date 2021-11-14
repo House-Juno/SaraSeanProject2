@@ -148,7 +148,8 @@ app.renderArray = (array)=>{
         const object = {
             id : arr.id, 
             imgName : arr.imgName,
-            quotes : arr.quotes
+            quotes : arr.quotes,
+            house : arr.house.name
         }
         const card = document.createElement('div');
         card.className = "myCard"
@@ -191,6 +192,7 @@ app.renderProfile=(data, object)=>{
             <i class="fas fa-times" onclick='app.myFunction()'></i>
         </div>
         <h3>${data.name}</h3>
+        <p><span>House:</span> ${object.house}</p>
         <p><span>Born:</span> ${data.born ?  data.born : 'not recorded'}</p>
         <p><span>Gender:</span> ${data.gender}</p>
         <p><span>Titles:</span> ${data.titles.join(', ')}</p>
@@ -213,7 +215,7 @@ app.renderProfile=(data, object)=>{
     const bodyHistory = document.querySelector('.historyPage');
     profileModalWindow.appendChild(profileModal)
     bodyHistory.appendChild(profileModalWindow);
-    console.log(object)
+    // console.log(object)
 
     // }, 200);
 

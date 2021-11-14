@@ -1275,6 +1275,9 @@ span {
           flex-direction: row;
   padding: 60px 30px;
 }
+.historyPage .profileModalWindow .profileModal .characterDetail {
+  width: 60%;
+}
 .historyPage .profileModalWindow .profileModal .characterDetail h3 {
   margin: 5px 0;
   text-align: left;
