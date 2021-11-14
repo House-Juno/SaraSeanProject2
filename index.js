@@ -278,7 +278,6 @@ app.renderQuestion=()=>{
 
             buttonsCntr.appendChild(historyBtn)
             buttonsCntr.appendChild(creditBtn)
-
             quoteContainer.appendChild(buttonsCntr)
         }
     }, 100);
@@ -317,7 +316,7 @@ app.selectChoice = (e)=>{
     
     // check if answer is correct or not: 
     // if correct
-    // console.log('e: ', e.target.id)
+
     if (e.target.dataset.selected === app.currentAnswer){
         // console.log('correct')
         app.correctChoice = app.correctChoice  + 1;

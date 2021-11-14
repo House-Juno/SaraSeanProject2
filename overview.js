@@ -145,7 +145,8 @@ app.getCharacters=()=>{
     })
 }
 app.renderArray = (array)=>{
-    const charactersArray= document.getElementById('charactersArray')
+    const charactersArray= document.getElementById('charactersArray');
+    charactersArray.innerHTML = ''
     array.forEach(arr=>{
         let object
         // some of the characters is missing the house key
@@ -223,7 +224,6 @@ app.renderProfile=(data, object)=>{
     const bodyHistory = document.querySelector('.historyPage');
     profileModalWindow.appendChild(profileModal)
     bodyHistory.appendChild(profileModalWindow);
-    // console.log(object)
 
 }
 app.myFunction= ()=>{
@@ -231,10 +231,46 @@ app.myFunction= ()=>{
     profileModalWindow.innerHTML=''
     profileModalWindow.style.height = 0
 
+}
+app.sortArray = (type)=>{
+    console.log('type: ', type);
+    console.log('type: ', app.newArray);
+    if (type ==='AtoZ'){
+        app.newArray.sort(
+            function(a,b){
+                return a.name > b.name
+            }
+        )
+        app.renderArray(app.newArray)
+        console.log(app.newArray)
+    }
+    if (type ==='ZtoA'){
+        app.newArray.sort(
+            function(a,b){
+                return a.name < b.name
+            }
+        )
+        app.renderArray(app.newArray)
+        console.log(app.newArray)
+    }
+    if (type ==='house'){
+        const filteredArr = app.newArray.filter(arr=>{
+            return arr.house !== null
+        })
+
+        filteredArr.sort(
+            function(a,b){
+                return a.house.name > b.house.name 
+            }
+        )
+        app.renderArray(filteredArr)
+        // console.log(filteredArr)
+    }
 
 }
 
 app.init = ()=>{
-    app.getCharacters()
+    app.getCharacters();
+
 }
 app.init();
