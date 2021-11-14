@@ -309,14 +309,6 @@ img {
   min-height: 30vh;
 }
 
-header {
-  min-height: 100vh;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.733)), to(rgba(153, 58, 58, 0))), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(153, 58, 58, 0)), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 button {
   cursor: pointer;
   color: white;
@@ -365,7 +357,15 @@ button:hover, .restartButton:hover {
           box-shadow: 0px 5px 10px black;
 }
 
-header .wrapper {
+.indexHeader {
+  min-height: 100vh;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.733)), to(rgba(153, 58, 58, 0))), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(153, 58, 58, 0)), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.indexHeader .wrapper {
   height: 94vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -388,7 +388,7 @@ h1 {
   text-shadow: 3px 3px black;
 }
 
-header {
+.indexHeader {
   text-align: center;
 }
 
@@ -427,6 +427,26 @@ span {
 
 #quote {
   font-style: italic;
+  width: 100%;
+  min-height: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(black), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0));
+  padding-bottom: 40px;
 }
 
 .quote {
@@ -442,7 +462,7 @@ span {
   margin: 0 auto;
 }
 
-.quote div {
+.quizScoreBoard {
   width: 100%;
   min-height: 160px;
   display: -webkit-box;
@@ -692,6 +712,7 @@ span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .houseBannerSect {
@@ -757,6 +778,62 @@ span {
           transform: scale(1.2);
 }
 
+.buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 50%;
+  margin: 10px auto;
+}
+
+.buttonContainer a {
+  font-size: 2.8rem;
+  height: 70px;
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  text-shadow: 2px 2px black;
+  width: 200px;
+  padding: 10px;
+  background: radial-gradient(#0b00007e, black), url(../assets/button.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 300px;
+  border-style: outset;
+  -webkit-box-shadow: 0px 15px 10px black;
+          box-shadow: 0px 15px 10px black;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.buttonContainer a:hover {
+  border-style: inset;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: scale(95%);
+          transform: scale(95%);
+  color: goldenrod;
+  -webkit-box-shadow: 0px 5px 10px black;
+          box-shadow: 0px 5px 10px black;
+}
+
+.nextBtnMedia {
+  width: 50px;
+  height: 121px;
+  position: absolute;
+  top: 30%;
+  right: -87px;
+  display: none;
+  z-index: 30;
+}
+
 @media (max-width: 1374px) {
   .characterChoiceContainer {
     margin: 0 auto;
@@ -794,6 +871,29 @@ span {
   .card .imgWrap {
     height: 320px;
   }
+
+  .buttonContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 70%;
+    margin: 10px auto;
+  }
+
+  .nextBtnMedia {
+    display: block;
+  }
+
+  .nextButton {
+    display: none;
+  }
 }
 @media (max-width: 850px) {
   .usernameContainer {
@@ -809,25 +909,26 @@ span {
     right: -7%;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 807px) {
+  .nextBtnMedia {
+    top: 43%;
+    right: -21px;
+  }
+
   .quizContainer {
     width: 100%;
     margin: 0% auto;
   }
 
   .card {
-    width: 230px;
+    width: 225px;
     margin: 10px 0px;
   }
   .card .imgWrap {
-    height: 320px;
+    height: 309px;
   }
   .card .imgWrap p {
     font-size: 1.6rem;
-  }
-
-  .nextButton {
-    margin: 39px auto;
   }
 
   .houseBannerSect .wrapper .houses {
@@ -871,6 +972,21 @@ span {
   .houseBannerSect .wrapper .houses img {
     width: 113px;
   }
+
+  .buttonContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 100%;
+    margin: 10px auto;
+  }
 }
 @media (max-width: 600px) {
   form {
@@ -908,8 +1024,8 @@ span {
   }
 
   .card {
-    width: 90%;
-    margin: 10px auto;
+    width: 88%;
+    margin-right: auto;
     background-position: center;
     background-size: cover;
     -webkit-box-align: center;
@@ -946,6 +1062,10 @@ span {
         -ms-flex-align: center;
             align-items: center;
     padding-top: 15px;
+  }
+
+  .nextBtnMedia {
+    right: -34px;
   }
 }
 @media (max-width: 500px) {
@@ -1001,6 +1121,63 @@ span {
     padding-top: 10px;
   }
 }
+.historyPage {
+  background: #c4c4c4;
+}
+.historyPage nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 40px;
+}
+.historyPage nav ul {
+  width: 70%;
+  margin: 0 auto;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+.historyPage nav ul li {
+  list-style: none;
+}
+.historyPage nav ul li a {
+  text-decoration: none;
+  color: goldenrod;
+  padding: 20px;
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.historyPage header {
+  height: 40vh;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.733)), to(rgba(153, 58, 58, 0))), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(153, 58, 58, 0)), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
+}
+.historyPage #charactersArray {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.historyPage #charactersArray .myCard {
+  width: 25%;
+}
+.historyPage #charactersArray .myCard img {
+  width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }
