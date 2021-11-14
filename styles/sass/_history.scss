@@ -63,6 +63,7 @@
             background-color: #ffffff;
             position: relative;
             cursor: pointer;
+            transition: .3s ease all;
             .cardTop{
                 background-color: #1d1d1dda;
                 border-radius: 0px;
@@ -72,7 +73,10 @@
                 align-items: center;
                 justify-content: center;
                 color: white;
-                visibility: hidden;
+                // visibility: hidden;
+                opacity: 0;
+                transition: .3s ease all;
+
                 p{
                     font-size: 2.1rem;
                     margin: 5px auto;
@@ -93,7 +97,8 @@
             }
         }
         .myCard:hover .cardTop{
-            visibility: visible;
+            // visibility: visible;
+            opacity: 1;
         }
     }
     .profileModalWindow{
@@ -108,7 +113,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        overflow: auto;
         
         .profileModal{
             width: 80%;
@@ -117,6 +121,8 @@
             display: flex;
             flex-direction: row;
             padding: 60px 30px;
+            position: relative;
+            overflow: auto;
             
             .characterDetail{
                 width: 60%;
@@ -125,13 +131,17 @@
                     text-align: left;
                 }
                 div{
-                    padding: 0px;
-                    display: flex;
-                    justify-content: end;
-                    margin-top: -26px;
+
+                    // padding: 0px;
+                    // display: flex;
+                    // justify-content: end;
+                    // margin-top: -26px;
                     i {
                         font-size: 2.7rem;
                         cursor: pointer;
+                        position: absolute;
+                        top: 20px;
+                        right: 20px;
                     }
                     i:hover {
                         color: goldenrod;
@@ -160,6 +170,74 @@
             li {
                     font-family: "Playfair Display", serif;
                     list-style: circle;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1050px) {
+
+        .historyPage{
+            #charactersArray{
+                width: 90%;
+                .myCard {
+                    width: 31%;
+                    height: 280px;
+
+                    img {
+                        height: 270px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 650px) {
+
+        .historyPage{
+            #charactersArray{
+                // width: 90%;
+                .myCard {
+                    width: 48%;
+                    height: 273px;
+
+                    img {
+                        height: 262px;
+                    }
+                }
+            }
+            .profileModalWindow{
+
+                .profileModal {
+                    flex-direction: column;
+
+                    .characterDetail, img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 571px) {
+
+        .historyPage{
+            #charactersArray{
+                // width: 90%;
+                .myCard {
+                    width: 29%;
+                    height: 171px;
+                    .cardTop {
+                        p{
+                            font-size: 1.8;
+                        }
+                        .tagName{
+
+                            font-size: 2.2rem;
+                        }
+                    }
+
+                    img {
+                        height: 160px;
+                    }
                 }
             }
         }

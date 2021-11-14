@@ -1201,6 +1201,8 @@ span {
   background-color: #ffffff;
   position: relative;
   cursor: pointer;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
 }
 .historyPage #charactersArray .myCard .cardTop {
   background-color: #1d1d1dda;
@@ -1220,7 +1222,9 @@ span {
       -ms-flex-pack: center;
           justify-content: center;
   color: white;
-  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
 }
 .historyPage #charactersArray .myCard .cardTop p {
   font-size: 2.1rem;
@@ -1239,7 +1243,7 @@ span {
   border: 3px solid transparent;
 }
 .historyPage #charactersArray .myCard:hover .cardTop {
-  visibility: visible;
+  opacity: 1;
 }
 .historyPage .profileModalWindow {
   background-color: rgba(39, 39, 39, 0.719);
@@ -1260,7 +1264,6 @@ span {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  overflow: auto;
 }
 .historyPage .profileModalWindow .profileModal {
   width: 80%;
@@ -1274,6 +1277,8 @@ span {
       -ms-flex-direction: row;
           flex-direction: row;
   padding: 60px 30px;
+  position: relative;
+  overflow: auto;
 }
 .historyPage .profileModalWindow .profileModal .characterDetail {
   width: 60%;
@@ -1282,19 +1287,12 @@ span {
   margin: 5px 0;
   text-align: left;
 }
-.historyPage .profileModalWindow .profileModal .characterDetail div {
-  padding: 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
-  margin-top: -26px;
-}
 .historyPage .profileModalWindow .profileModal .characterDetail div i {
   font-size: 2.7rem;
   cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 .historyPage .profileModalWindow .profileModal .characterDetail div i:hover {
   color: goldenrod;
@@ -1323,6 +1321,51 @@ span {
   list-style: circle;
 }
 
+@media (max-width: 1050px) {
+  .historyPage #charactersArray {
+    width: 90%;
+  }
+  .historyPage #charactersArray .myCard {
+    width: 31%;
+    height: 280px;
+  }
+  .historyPage #charactersArray .myCard img {
+    height: 270px;
+  }
+}
+@media (max-width: 650px) {
+  .historyPage #charactersArray .myCard {
+    width: 48%;
+    height: 273px;
+  }
+  .historyPage #charactersArray .myCard img {
+    height: 262px;
+  }
+  .historyPage .profileModalWindow .profileModal {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .historyPage .profileModalWindow .profileModal .characterDetail, .historyPage .profileModalWindow .profileModal img {
+    width: 100%;
+  }
+}
+@media (max-width: 571px) {
+  .historyPage #charactersArray .myCard {
+    width: 29%;
+    height: 171px;
+  }
+  .historyPage #charactersArray .myCard .cardTop p {
+    font-size: 1.8;
+  }
+  .historyPage #charactersArray .myCard .cardTop .tagName {
+    font-size: 2.2rem;
+  }
+  .historyPage #charactersArray .myCard img {
+    height: 160px;
+  }
+}
 html {
   scroll-behavior: smooth;
 }

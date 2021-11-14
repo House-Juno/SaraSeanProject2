@@ -145,11 +145,22 @@ app.getCharacters=()=>{
 app.renderArray = (array)=>{
     const charactersArray= document.getElementById('charactersArray')
     array.forEach(arr=>{
-        const object = {
-            id : arr.id, 
-            imgName : arr.imgName,
-            quotes : arr.quotes,
-            house : arr.house.name
+        let object
+        if (arr.house){
+
+            object = {
+                id : arr.id, 
+                imgName : arr.imgName,
+                quotes : arr.quotes,
+                house : arr.house.name
+            }
+        } else {
+            object = {
+                id : arr.id, 
+                imgName : arr.imgName,
+                quotes : arr.quotes,
+                house : 'Unknown'
+            }
         }
         const card = document.createElement('div');
         card.className = "myCard"
@@ -192,9 +203,9 @@ app.renderProfile=(data, object)=>{
             <i class="fas fa-times" onclick='app.myFunction()'></i>
         </div>
         <h3>${data.name}</h3>
-        <p><span>House:</span> ${object.house}</p>
-        <p><span>Born:</span> ${data.born ?  data.born : 'not recorded'}</p>
-        <p><span>Gender:</span> ${data.gender}</p>
+        <p><span>House:</span> ${object.house ? object.house : 'Unknown'}</p>
+        <p><span>Born:</span> ${data.born ?  data.born : 'Unknown'}</p>
+        <p><span>Gender:</span> ${data.gender ?  data.gender : 'Unknown'}</p>
         <p><span>Titles:</span> ${data.titles.join(', ')}</p>
         <p><span>Aliases:</span> ${data.aliases.join(', ')}</p>
         <p><span>Quotes:</span></p>
