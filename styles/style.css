@@ -1177,6 +1177,71 @@ span {
 .historyPage header h1 {
   font-size: 5rem;
 }
+.historyPage .charactersSection {
+  padding: 10px 0;
+}
+.historyPage .charactersSection .sortHldr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  width: 80%;
+  margin: 20px auto;
+}
+.historyPage .charactersSection .sortBtnCntr {
+  position: relative;
+  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 200px;
+}
+.historyPage .charactersSection .sortBtn {
+  height: 50px;
+  font-size: 2rem;
+}
+.historyPage .charactersSection .dropDownMenu {
+  position: absolute;
+  color: white;
+  text-align: center;
+  background: #1a1a1a;
+  width: 200px;
+  -webkit-box-shadow: 0px 15px 10px black;
+          box-shadow: 0px 15px 10px black;
+  top: 55px;
+  right: 5px;
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  z-index: 50;
+}
+.historyPage .charactersSection .dropDownMenu a {
+  color: white;
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.historyPage .charactersSection .dropDownMenu a:hover, .historyPage .charactersSection .dropDownMenu a:focus {
+  color: goldenrod;
+  border: 1px solid goldenrod;
+}
+.historyPage .charactersSection .sortBtnCntr:hover .dropDownMenu, .historyPage .charactersSection .sortBtnCntr:focus .dropDownMenu {
+  height: 200px;
+  overflow: visible;
+}
 .historyPage #charactersArray {
   width: 80%;
   margin: 0 auto;
@@ -1242,7 +1307,7 @@ span {
   border-radius: 10px;
   border: 3px solid transparent;
 }
-.historyPage #charactersArray .myCard:hover .cardTop {
+.historyPage #charactersArray .myCard:hover .cardTop, .historyPage #charactersArray .myCard:focus .cardTop {
   opacity: 1;
 }
 .historyPage .profileModalWindow {
@@ -1282,10 +1347,15 @@ span {
 }
 .historyPage .profileModalWindow .profileModal .characterDetail {
   width: 60%;
+  margin: 0 auto;
 }
 .historyPage .profileModalWindow .profileModal .characterDetail h3 {
-  margin: 5px 0;
+  font-size: 3rem;
+  margin: 0px 0 20px 0;
   text-align: left;
+}
+.historyPage .profileModalWindow .profileModal .characterDetail p {
+  margin: 10px 0;
 }
 .historyPage .profileModalWindow .profileModal .characterDetail div i {
   font-size: 2.7rem;
@@ -1294,7 +1364,7 @@ span {
   top: 20px;
   right: 20px;
 }
-.historyPage .profileModalWindow .profileModal .characterDetail div i:hover {
+.historyPage .profileModalWindow .profileModal .characterDetail div i:hover, .historyPage .profileModalWindow .profileModal .characterDetail div i:focus {
   color: goldenrod;
 }
 .historyPage .profileModalWindow .profileModal .characterDetail span {
@@ -1303,15 +1373,12 @@ span {
   margin-right: 5px;
 }
 .historyPage .profileModalWindow .profileModal img {
-  width: 40%;
-  height: 300px;
+  width: 35%;
+  height: 364px;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: top;
-     object-position: top;
-}
-.historyPage .profileModalWindow .profileModal div {
-  padding: 10px 20px;
+  -o-object-position: center;
+     object-position: center;
 }
 .historyPage .profileModalWindow .profileModal div ul {
   margin: 0;
