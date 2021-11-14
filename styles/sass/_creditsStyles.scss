@@ -1,7 +1,36 @@
 #credits, #teachers h1, h2{
   text-align: center;
 }
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 40px;
 
+  ul {
+      width: 70%;
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      justify-content: space-evenly;
+
+      li {
+          list-style: none;
+
+          a {
+              text-decoration: none;
+              color: goldenrod;
+              padding: 20px;
+              text-align: center;
+              font-size: 2.5rem;
+              text-transform: uppercase;
+              
+          }
+
+      }
+  }
+}
 h2 {
   color: white;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0)
@@ -17,7 +46,6 @@ h2 {
 
 #credits .card{
   margin: 50px;
-
 }
 
 //teachers section

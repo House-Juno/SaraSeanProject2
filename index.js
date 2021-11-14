@@ -272,9 +272,9 @@ app.renderQuestion=()=>{
             const historyBtn = document.createElement('a');
             
             historyBtn.innerHTML='Characters'
-            historyBtn.href='characters.html'
-            creditBtn.innerHTML='Credit'
-            creditBtn.href='Credit.html'
+            historyBtn.href='./characters.html'
+            creditBtn.innerHTML='Credits'
+            creditBtn.href='./credits.html'
 
             buttonsCntr.appendChild(historyBtn)
             buttonsCntr.appendChild(creditBtn)
