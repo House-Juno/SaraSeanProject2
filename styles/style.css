@@ -1155,8 +1155,27 @@ span {
 }
 .historyPage header {
   height: 40vh;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
   background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.733)), to(rgba(153, 58, 58, 0))), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(153, 58, 58, 0)), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.historyPage header h1 {
+  font-size: 5rem;
 }
 .historyPage #charactersArray {
   width: 80%;
@@ -1170,12 +1189,135 @@ span {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 .historyPage #charactersArray .myCard {
-  width: 25%;
+  width: 23%;
+  margin: 5px;
+  height: 310px;
+  padding: 5px;
+  background-color: #ffffff;
+  position: relative;
+  cursor: pointer;
+}
+.historyPage #charactersArray .myCard .cardTop {
+  background-color: #1d1d1dda;
+  border-radius: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  visibility: hidden;
+}
+.historyPage #charactersArray .myCard .cardTop p {
+  font-size: 2.1rem;
+  margin: 5px auto;
+}
+.historyPage #charactersArray .myCard .cardTop .tagName {
+  font-size: 3.2rem;
+  color: goldenrod;
 }
 .historyPage #charactersArray .myCard img {
+  height: 300px;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid transparent;
+}
+.historyPage #charactersArray .myCard:hover .cardTop {
+  visibility: visible;
+}
+.historyPage .profileModalWindow {
+  background-color: rgba(39, 39, 39, 0.719);
+  position: sticky;
+  height: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: auto;
+}
+.historyPage .profileModalWindow .profileModal {
+  width: 80%;
+  margin: 0 auto;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 60px 30px;
+}
+.historyPage .profileModalWindow .profileModal .characterDetail h3 {
+  margin: 5px 0;
+  text-align: left;
+}
+.historyPage .profileModalWindow .profileModal .characterDetail div {
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin-top: -26px;
+}
+.historyPage .profileModalWindow .profileModal .characterDetail div i {
+  font-size: 2.7rem;
+  cursor: pointer;
+}
+.historyPage .profileModalWindow .profileModal .characterDetail div i:hover {
+  color: goldenrod;
+}
+.historyPage .profileModalWindow .profileModal .characterDetail span {
+  font-weight: bolder;
+  display: inline;
+  margin-right: 5px;
+}
+.historyPage .profileModalWindow .profileModal img {
+  width: 40%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+.historyPage .profileModalWindow .profileModal div {
+  padding: 10px 20px;
+}
+.historyPage .profileModalWindow .profileModal div ul {
+  margin: 0;
+}
+.historyPage .profileModalWindow .profileModal li {
+  font-family: "Playfair Display", serif;
+  list-style: circle;
 }
 
 html {

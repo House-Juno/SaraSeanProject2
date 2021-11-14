@@ -131,11 +131,8 @@ app.getCharacters=()=>{
             app.charactersArr.forEach(cc=>{
                 if (cc.name === character.name){
                     let newObje = {...character}
-                    // console.log('same name: ', cc.name+ ' ' + cc.id)
-                    // console.log('snewObje ',newObje)
                     newObje.id = cc.id
                     newObje.imgName = cc.imgName
-
                     app.newArray.push(newObje)
                 }
             })
@@ -148,15 +145,96 @@ app.getCharacters=()=>{
 app.renderArray = (array)=>{
     const charactersArray= document.getElementById('charactersArray')
     array.forEach(arr=>{
+        const object = {
+            id : arr.id, 
+            imgName : arr.imgName,
+            quotes : arr.quotes
+        }
         const card = document.createElement('div');
         card.className = "myCard"
         card.id = arr.id
         card.innerHTML = `
+            <div class="cardTop">
+                <p>Click to view more about</p>
+                <p class="tagName">${arr.name}</p>
+            </div>
             <img src="./characterPics/${arr.imgName}.webp" alt="" class="characterimg">
             `
             // <p>${arr.name}</p>
-        charactersArray.appendChild(card)
+        charactersArray.appendChild(card);
+        card.addEventListener('click', ()=>{app.selectCard(object)})
     })
+}
+app.selectCard = (object)=>{
+    // console.log('e', id)
+    fetch(`https://anapioficeandfire.com/api/characters/${object.id}`)
+    .then(function(response){
+        return response.json();
+    }).then((data)=>{
+        // console.log(data, imgName);
+        app.renderProfile(data, object)
+    })
+}
+app.renderProfile=(data, object)=>{
+    console.log(object)
+    const profileModalWindow = document.querySelector('.profileModalWindow');
+    profileModalWindow.style.height = '100vh'
+    const profileModal = document.createElement('div');
+    const characterDetail = document.createElement('div');
+    characterDetail.className = "characterDetail";
+    profileModal.className = 'profileModal';
+    profileModal.innerHTML = `
+    <img src="./characterPics/${object.imgName}.webp" alt="">
+    `
+    characterDetail.innerHTML = `
+        <div >
+            <i class="fas fa-times" onclick='app.myFunction()'></i>
+        </div>
+        <h3>${data.name}</h3>
+        <p><span>Born:</span> ${data.born ?  data.born : 'not recorded'}</p>
+        <p><span>Gender:</span> ${data.gender}</p>
+        <p><span>Titles:</span> ${data.titles.join(', ')}</p>
+        <p><span>Aliases:</span> ${data.aliases.join(', ')}</p>
+        <p><span>Quotes:</span></p>
+    `
+    // <div class="characterDetail">
+    //     ${object.quotes}
+    //     <ul class="quotes>
+            
+    const ul = document.createElement('ul')
+    object.quotes.forEach(quote=>{
+        const li = document.createElement('li')
+        li.textContent = quote;
+        ul.appendChild(li)
+    })
+    characterDetail.appendChild(ul);
+
+    profileModal.appendChild(characterDetail)
+    const bodyHistory = document.querySelector('.historyPage');
+    profileModalWindow.appendChild(profileModal)
+    bodyHistory.appendChild(profileModalWindow);
+    console.log(object)
+
+    // }, 200);
+
+    /* 
+        <div class="profileModalWindow">
+        <div class="profileModal">
+            <img src="./characterPics/Jon.webp" alt="">
+            <div>
+                <h3>Jon Snow</h3>
+            </div>
+        </div>
+
+        </div>
+    */
+}
+app.myFunction= ()=>{
+    const profileModalWindow = document.querySelector('.profileModalWindow');
+    profileModalWindow.innerHTML=''
+    profileModalWindow.style.height = 0
+
+
 }
 
 app.init = ()=>{
