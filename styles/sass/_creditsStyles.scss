@@ -1,0 +1,49 @@
+#credits, #teachers h1, h2{
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0)
+  );
+  padding: 20px;
+
+}
+
+#credits .characterChoiceContainer{
+  justify-content: center;
+  margin: 12% 0 0 0;
+}
+
+#credits .card{
+  margin: 50px;
+
+}
+
+//teachers section
+
+
+
+#teachers .characterChoiceContainer{
+  justify-content: center;
+
+}
+
+#teachers .card{
+  margin: 40px;
+  background-size: cover;
+  
+  
+}
+#teachers .imgWrap{
+  height: 300px;
+  padding: 50px 10px;
+
+}
+
+#teacher .imgWrap img {
+  height: 90%;
+width: 100%;
+
+
+}

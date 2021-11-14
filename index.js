@@ -53,6 +53,7 @@ app.startGame = ()=>{
         quizSection.scrollIntoView({behavior: 'smooth'});
     }, 100);
     
+    
     // app.getData()
     // console.log('wait:', app.questionArray)
     app.houseBannerSect.style.display = 'none';

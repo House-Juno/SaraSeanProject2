@@ -290,7 +290,7 @@ img {
   height: auto;
 }
 
-#quizSection {
+#quizSection, #credits, #teachers {
   background-image: -webkit-gradient(linear, left bottom, left top, from(#25252500), to(#000000e0)), radial-gradient(#00000034, rgba(0, 0, 0, 0.938)), url(../assets/newBackground.png);
   background-image: linear-gradient(to top, #25252500, #000000e0), radial-gradient(#00000034, rgba(0, 0, 0, 0.938)), url(../assets/newBackground.png);
   background-size: cover;
@@ -832,6 +832,49 @@ span {
   right: -87px;
   display: none;
   z-index: 30;
+}
+
+#credits, #teachers h1, h2 {
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(black), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0));
+  padding: 20px;
+}
+
+#credits .characterChoiceContainer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 12% 0 0 0;
+}
+
+#credits .card {
+  margin: 50px;
+}
+
+#teachers .characterChoiceContainer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#teachers .card {
+  margin: 40px;
+  background-size: cover;
+}
+
+#teachers .imgWrap {
+  height: 300px;
+  padding: 50px 10px;
+}
+
+#teacher .imgWrap img {
+  height: 90%;
+  width: 100%;
 }
 
 @media (max-width: 1374px) {
