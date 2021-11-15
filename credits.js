@@ -36,7 +36,7 @@ const renderStudent = () => {
   });
 }
 
-// renderStudent()
+renderStudent()
 
 const renderTeachers = () => {
   teachersArray.forEach(teacher => {
@@ -60,7 +60,7 @@ const renderTeachers = () => {
   });
 }
 
-// renderTeachers()
+renderTeachers()
 
 
 
