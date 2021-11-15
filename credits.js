@@ -1,9 +1,3 @@
-// getting data and creating the quiz on load
-// const fetchUsers = async (user) => {
-//   const api_call = await fetch (`https://api.github.com/users/USERNAME`)
-// let avatar_url = () => {
-//   fetch(`https://api.github.com/users/${avatar_url}`)
-// }
 
 const studentsArray = [
   
@@ -11,7 +5,7 @@ const studentsArray = [
 ]
 const teachersArray = [
 
-    "colindamelio", "EstherEdell", "darshanasen", "adrianpearman", "davidallenjordan", "JoeyDeol", "lauraeasson", "zeinabkahera", "madifuller"  
+    "colindamelio", "EstherEdell", "darshanasen", "adrianpearman", "davidallenjordan", "JoeyDeol", "lauraeasson", "zeinabkahera", "madifuller", "sebastianowen"   
 ]
 
 const renderStudent = () => {
@@ -73,11 +67,4 @@ hamburgerMenu.addEventListener("click", () => {
 })
 
 
-// const creditPhoto = document.getElementById('creditPhoto');
 
-  
-//     fetch(`https://api.github.com/users/SeanSip`)
-//       .then(res => res.json())
-//       .then(data => {
-//         creditPhoto = `<img src="${data.avatar_url}`
-//       })
