@@ -290,7 +290,7 @@ img {
   height: auto;
 }
 
-#quizSection, #credits, #teachers {
+.quizSection, .credits, .teachers {
   background-image: -webkit-gradient(linear, left bottom, left top, from(#25252500), to(#000000e0)), radial-gradient(#00000034, rgba(0, 0, 0, 0.938)), url(../assets/newBackground.png);
   background-image: linear-gradient(to top, #25252500, #000000e0), radial-gradient(#00000034, rgba(0, 0, 0, 0.938)), url(../assets/newBackground.png);
   background-size: cover;
@@ -425,7 +425,7 @@ span {
   margin-bottom: 20px;
 }
 
-#quote {
+.mainQuote {
   font-style: italic;
   width: 100%;
   min-height: 160px;
@@ -482,6 +482,9 @@ span {
       align-content: center;
   background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(black), to(rgba(0, 0, 0, 0)));
   background: linear-gradient(90deg, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0));
+}
+.quizScoreBoard .restartButton {
+  font-family: "Cinzel Decorative", cursive;
 }
 
 .quote h3 {
@@ -627,7 +630,7 @@ span {
   background: rgba(116, 3, 3, 0.11);
 }
 
-#quizSection {
+.quizSection {
   padding: 50px;
   display: none;
 }
@@ -638,7 +641,7 @@ span {
   transition: 0.5s;
 }
 
-#quizSection .wrapper {
+.quizSection .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -678,7 +681,7 @@ span {
   text-align: right;
 }
 
-#quizNumber {
+.quizNumber {
   background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.596)));
   background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.596));
   font-size: 3.2rem;
@@ -689,7 +692,7 @@ span {
   right: 1%;
   text-align: left;
 }
-#quizNumber span {
+.quizNumber span {
   font-size: 1.8rem;
   display: inline;
 }
@@ -794,14 +797,14 @@ span {
 }
 
 .buttonContainer a {
-  font-size: 2.8rem;
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 1.7rem;
   height: 70px;
   text-decoration: none;
   cursor: pointer;
   color: white;
-  text-shadow: 2px 2px black;
   width: 200px;
-  padding: 10px;
+  padding: 14px;
   background: radial-gradient(#0b00007e, black), url(../assets/button.webp);
   background-repeat: no-repeat;
   background-size: cover;
@@ -811,6 +814,8 @@ span {
           box-shadow: 0px 15px 10px black;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  text-transform: uppercase;
+  border: 2px solid white;
 }
 
 .buttonContainer a:hover {
@@ -859,11 +864,11 @@ header h1 {
   font-size: 5rem;
 }
 
-#credits, #teachers, section {
+.credits, .teachers, section {
   background: #c4c4c4;
 }
 
-#credits, #teachers, h1, h2 {
+.credits, .teachers, h1, h2 {
   text-align: center;
 }
 
@@ -895,6 +900,11 @@ nav ul li a {
   text-align: center;
   font-size: 2.5rem;
   text-transform: uppercase;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  color: white;
 }
 
 h2 {
@@ -904,29 +914,36 @@ h2 {
   padding: 20px;
 }
 
-#credits .characterChoiceContainer {
+.creditContainer {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.credits .card {
+  margin: 30px auto;
+}
+
+.teachers .characterChoiceContainer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 12% 0 0 0;
 }
 
-#credits .card {
-  margin: 50px;
-}
-
-#teachers .characterChoiceContainer {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-#teachers .card {
-  margin: 40px;
+.teachers .card {
+  margin: 20px auto;
   background-size: cover;
 }
 
-#teachers .imgWrap {
+.teachers .imgWrap {
   height: 300px;
   padding: 50px 10px;
 }
@@ -1014,6 +1031,15 @@ h2 {
   }
 }
 @media (max-width: 857px) {
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+
   .hamburgerMenu {
     display: block;
   }
@@ -1038,7 +1064,7 @@ h2 {
     position: absolute;
     top: 0%;
     right: 0%;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.918);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1051,6 +1077,7 @@ h2 {
 
   .navMenu li {
     margin: 20px auto;
+    text-align: center;
   }
 
   .navMenu.active2 {
@@ -1075,7 +1102,7 @@ h2 {
     width: 60px;
   }
 
-  #quizNumber {
+  .quizNumber {
     right: -7%;
   }
 }
@@ -1181,7 +1208,7 @@ h2 {
     width: 54px;
   }
 
-  #quizNumber {
+  .quizNumber {
     right: -9%;
     top: -44px;
   }
@@ -1239,9 +1266,57 @@ h2 {
   }
 }
 @media (max-width: 500px) {
+  header h1 {
+    font-size: 4rem;
+  }
+  header form {
+    width: 80%;
+  }
+  header form input[type=text] {
+    padding: 15px;
+    margin: 20px auto;
+    font-size: 1.8rem;
+  }
+
+  button {
+    width: 160px;
+    height: 62px;
+    padding: 8px;
+    border-radius: 295px;
+    font-size: 2rem;
+  }
+
+  .restartButton {
+    width: 235px;
+    height: 64px;
+    padding: 15px 35px;
+    margin: 10px auto;
+  }
+
+  .buttonContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .buttonContainer a {
+    height: 60px;
+    width: 197px;
+    padding: 15px;
+    margin: 10px auto;
+    border: 1px solid;
+  }
+
+  .quizSection {
+    padding: 50px 20px;
+  }
+
   .usernameContainer {
     top: -28px;
-    left: -12%;
+    left: 0%;
   }
 
   #usernameOutput {
@@ -1290,6 +1365,78 @@ h2 {
     margin: 0 auto;
     padding-top: 10px;
   }
+
+  .quizNumber {
+    right: -6%;
+  }
+}
+@media (max-width: 400px) {
+  header h1 {
+    font-size: 3rem;
+  }
+
+  form {
+    width: 100%;
+  }
+  form input[type=text] {
+    padding: 15px;
+    margin: 20px auto;
+    font-size: 1.8rem;
+  }
+
+  button {
+    width: 160px;
+    height: 62px;
+    padding: 8px;
+    border-radius: 295px;
+    font-size: 2rem;
+  }
+
+  .usernameContainer {
+    top: -36px;
+    font-size: 1.7rem;
+  }
+
+  .houseBannerSect .wrapper .houses img {
+    width: 82px;
+  }
+
+  .quizSection {
+    padding: 50px 0px;
+  }
+
+  .quizContainer {
+    width: 95%;
+  }
+
+  .quizNumber {
+    font-size: 2.5rem;
+  }
+
+  .characterChoiceContainer {
+    -ms-flex-line-pack: baseline;
+        align-content: baseline;
+  }
+
+  .nextBtnMedia {
+    right: -5px;
+    width: 35px;
+  }
+
+  .card {
+    width: 85%;
+    margin-left: 5px;
+  }
+  .card .imgWrap {
+    height: 75px;
+  }
+  .card .imgWrap p {
+    font-size: 1.4rem;
+  }
+  .card .imgWrap img {
+    height: 80px;
+    width: 70px;
+  }
 }
 .historyPage {
   background: #c4c4c4;
@@ -1322,6 +1469,9 @@ h2 {
   text-align: center;
   font-size: 2.5rem;
   text-transform: uppercase;
+}
+.historyPage nav ul li a:hover {
+  color: white;
 }
 .historyPage header {
   height: 40vh;
@@ -1412,7 +1562,7 @@ h2 {
   height: 200px;
   overflow: visible;
 }
-.historyPage #charactersArray {
+.historyPage .charactersArray {
   width: 80%;
   margin: 0 auto;
   display: -webkit-box;
@@ -1428,7 +1578,7 @@ h2 {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
-.historyPage #charactersArray .myCard {
+.historyPage .charactersArray .myCard {
   width: 23%;
   margin: 5px;
   height: 310px;
@@ -1439,7 +1589,7 @@ h2 {
   -webkit-transition: 0.3s ease all;
   transition: 0.3s ease all;
 }
-.historyPage #charactersArray .myCard .cardTop {
+.historyPage .charactersArray .myCard .cardTop {
   background-color: #1d1d1dda;
   border-radius: 0px;
   display: -webkit-box;
@@ -1461,15 +1611,15 @@ h2 {
   -webkit-transition: 0.3s ease all;
   transition: 0.3s ease all;
 }
-.historyPage #charactersArray .myCard .cardTop p {
+.historyPage .charactersArray .myCard .cardTop p {
   font-size: 2.1rem;
   margin: 5px auto;
 }
-.historyPage #charactersArray .myCard .cardTop .tagName {
+.historyPage .charactersArray .myCard .cardTop .tagName {
   font-size: 3.2rem;
   color: goldenrod;
 }
-.historyPage #charactersArray .myCard img {
+.historyPage .charactersArray .myCard img {
   height: 300px;
   width: 100%;
   -o-object-fit: cover;
@@ -1477,7 +1627,7 @@ h2 {
   border-radius: 10px;
   border: 3px solid transparent;
 }
-.historyPage #charactersArray .myCard:hover .cardTop, .historyPage #charactersArray .myCard:focus .cardTop {
+.historyPage .charactersArray .myCard:hover .cardTop, .historyPage .charactersArray .myCard:focus .cardTop {
   opacity: 1;
 }
 .historyPage .profileModalWindow {
@@ -1559,23 +1709,81 @@ h2 {
 }
 
 @media (max-width: 1050px) {
-  .historyPage #charactersArray {
+  .historyPage .charactersArray {
     width: 90%;
   }
-  .historyPage #charactersArray .myCard {
+  .historyPage .charactersArray .myCard {
     width: 31%;
     height: 280px;
   }
-  .historyPage #charactersArray .myCard img {
+  .historyPage .charactersArray .myCard img {
     height: 270px;
   }
 }
+@media (max-width: 857px) {
+  .historyPage .hamburgerMenu {
+    display: block;
+  }
+  .historyPage .hamburgerMenu.active2 .bar:nth-child(3) {
+    -webkit-transform: rotate(45deg) translate(-13px);
+            transform: rotate(45deg) translate(-13px);
+  }
+  .historyPage .hamburgerMenu.active2 .bar:nth-child(2) {
+    -webkit-transform: translatex(-30px);
+            transform: translatex(-30px);
+    background: transparent;
+  }
+  .historyPage .hamburgerMenu.active2 .bar:nth-child(1) {
+    -webkit-transform: rotate(-45deg) translate(-15px);
+            transform: rotate(-45deg) translate(-15px);
+  }
+  .historyPage nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+  .historyPage .navMenu {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    padding: 50px 0;
+    -webkit-transform: scale(0%);
+            transform: scale(0%);
+    background-color: rgba(0, 0, 0, 0.918);
+  }
+  .historyPage .navMenu li {
+    margin: 20px auto;
+  }
+  .historyPage .navMenu.active2 {
+    display: block;
+    -webkit-transform: scale(100%);
+            transform: scale(100%);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .historyPage a {
+    text-shadow: 1px 1px black;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .historyPage a:hover {
+    color: white;
+  }
+}
 @media (max-width: 650px) {
-  .historyPage #charactersArray .myCard {
+  .historyPage .charactersArray .myCard {
     width: 48%;
     height: 273px;
   }
-  .historyPage #charactersArray .myCard img {
+  .historyPage .charactersArray .myCard img {
     height: 262px;
   }
   .historyPage .profileModalWindow .profileModal {
@@ -1589,18 +1797,32 @@ h2 {
   }
 }
 @media (max-width: 571px) {
-  .historyPage #charactersArray .myCard {
+  .historyPage .charactersArray .myCard {
     width: 29%;
     height: 171px;
   }
-  .historyPage #charactersArray .myCard .cardTop p {
+  .historyPage .charactersArray .myCard .cardTop p {
     font-size: 1.8;
   }
-  .historyPage #charactersArray .myCard .cardTop .tagName {
+  .historyPage .charactersArray .myCard .cardTop .tagName {
     font-size: 2.2rem;
   }
-  .historyPage #charactersArray .myCard img {
+  .historyPage .charactersArray .myCard img {
     height: 160px;
+  }
+}
+@media (max-width: 400px) {
+  .historyPage header h1 {
+    margin-top: 10px;
+    font-size: 3rem;
+  }
+  .historyPage .charactersArray .myCard {
+    width: 44%;
+  }
+  .historyPage .charactersSection .sortBtn {
+    height: 40px;
+    font-size: 1.6rem;
+    width: 123px;
   }
 }
 html {

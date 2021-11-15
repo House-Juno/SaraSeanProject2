@@ -64,7 +64,7 @@ app.startGame = ()=>{
             <img class="bannerLogo" src='./assets/houses/${app.userHouse}.png' alt='${app.userHouse} house banner'/>
             <p id="usernameOutput">${app.userName}</p>
         </div>
-        <p id="quizNumber"></p>
+        <p id="quizNumber" class="quizNumber"></p>
         <div class="quote">
 
         </div>
@@ -111,16 +111,10 @@ app.createQuestionsArray=(charactersArr)=>{
     })
     // getting the first choice as selected 
     if(filteringArray[0].quotes.length>0){
-        // console.log('charactersArr[0].quotes.length', filteringArray[0].quotes.length)
-        // console.log('charactersArr[0].quotes.length', filteringArray[0])
         app.selectQuestion(filteringArray, selectedQuestion);
         return filteringArray;
     } else if (filteringArray[0].quotes.length == 0){
-        // console.log('charactersArr[0].quotes.length', filteringArray[0].quotes.length)
-        // if no quote is left remove the character from the list
-        // console.log('characters: ', filteringArray[0])
         filteringArray.splice(0, 1);
-        // console.log('charactersArr after splice: ', filteringArray)
 
         // shuffle the array after removing
         app.shuffle(filteringArray);
@@ -168,7 +162,7 @@ app.renderQuestion=()=>{
         quoteContainer.innerHTML = `
             <p><span>Who Said: </span></p>
             <div>
-                <p id="quote"></p>
+                <p id="quote" class="mainQuote"></p>
             </div>
         `
         const quote = document.getElementById('quote');
@@ -222,7 +216,7 @@ app.renderQuestion=()=>{
             if(app.correctChoice === app.questionArray.length && app.incorrectChoice === 0){
                 quoteContainer.innerHTML=`
                 <div class="quizScoreBoard">
-                    <div id="quote">
+                    <div id="quote" class="mainQuote">
                         <h3><span class="endingUserName">${app.userName}</span> of House ${app.userHouse}</h3>
                         <p>Quiz Complete!</p>
                         <p>Your score : ${app.userScore}</p>
@@ -236,7 +230,7 @@ app.renderQuestion=()=>{
             else if(app.correctChoice === 0 && app.incorrectChoice === app.questionArray.length){
                 quoteContainer.innerHTML=`
                 <div class="quizScoreBoard">
-                    <div id="quote">
+                    <div id="quote" class="mainQuote">
                     <h3><span class="endingUserName">${app.userName}</span> of House ${app.userHouse}</h3>
                     <p>Quiz Complete!</p>
                         <p>Your score : ${app.userScore}</p>
@@ -250,7 +244,7 @@ app.renderQuestion=()=>{
             else {
                 quoteContainer.innerHTML=`
                 <div class="quizScoreBoard">
-                    <div id="quote">
+                    <div id="quote" class="mainQuote">
                     <h3><span class="endingUserName">${app.userName}</span> of House ${app.userHouse}</h3>
                     <p>Quiz Complete!</p>
                         <p>Your score : ${app.userScore}</p>
