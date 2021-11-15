@@ -26,7 +26,6 @@ app.scrollToHome=()=>{
     }, 100);
 }
 app.selectHome = (e)=>{
-    console.log(e.target.id);
     app.userHouse = e.target.id;
     app.startGame();
 }
@@ -40,7 +39,6 @@ app.inputEnter.onkeydown= (e)=>{
 }
 // app.startButton.addEventListener('click', app.startGame)
 app.startGame = ()=>{
-    console.log('starting game')
     app.userName = document.querySelector('input').value
 
     app.startButton.className='hidden';
@@ -54,8 +52,6 @@ app.startGame = ()=>{
     }, 100);
     
     
-    // app.getData()
-    // console.log('wait:', app.questionArray)
     app.houseBannerSect.style.display = 'none';
 
     quizSection.innerHTML = `
@@ -93,7 +89,6 @@ app.getData = ()=>{
     })
 }
 app.createQuiz=(data)=>{
-    // console.log('data: ', data)
     let charactersArr= data;
     let gettingArr = app.createQuestionsArray(charactersArr);
     for(l=1; l<=5; l++){
@@ -168,8 +163,6 @@ app.renderQuestion=()=>{
         const quote = document.getElementById('quote');
         const quizNumber = document.querySelector('#quizNumber');
         quote.innerHTML = ''
-        // console.log(app.index )
-        // console.log(app.questionArray.length)
         if(app.index < app.questionArray.length && app.startOver== false){
             quizNumber.innerHTML = `${app.index + 1} <span> out of </span> ${app.questionArray.length}`
 
@@ -312,14 +305,11 @@ app.selectChoice = (e)=>{
     // if correct
 
     if (e.target.dataset.selected === app.currentAnswer){
-        // console.log('correct')
         app.correctChoice = app.correctChoice  + 1;
 
         app.userScore = app.userScore + 10
         e.target.className = 'cardTop correct';
         const allCards = document.querySelectorAll('.card');
-        // console.log('why not showing?')
-        // console.log('allCard:', allCards);
         const newArr = []
         allCards.forEach(card=>{
             

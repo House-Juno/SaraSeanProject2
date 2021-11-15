@@ -128,7 +128,6 @@ app.getCharacters=()=>{
     .then((data)=>{
         app.dataArray = [...data]
         app.dataArray2 = [...data]
-        console.log(app.dataArray2)
         app.newArray = []
         app.dataArray2.forEach(character => {
             app.charactersArr.forEach(cc=>{
@@ -189,7 +188,6 @@ app.selectCard = (object)=>{
     })
 }
 app.renderProfile=(data, object)=>{
-    console.log(object)
     const profileModalWindow = document.querySelector('.profileModalWindow');
     profileModalWindow.style.height = '100vh'
     const profileModal = document.createElement('div');
@@ -233,25 +231,22 @@ app.myFunction= ()=>{
 
 }
 app.sortArray = (type)=>{
-    console.log('type: ', type);
-    console.log('type: ', app.newArray);
     if (type ==='AtoZ'){
         app.newArray.sort(
             function(a,b){
-                return a.name > b.name
+                // a < b ? 1 : -1
+                return a.name > b.name ? 1 : -1
             }
         )
         app.renderArray(app.newArray)
-        console.log(app.newArray)
     }
     if (type ==='ZtoA'){
         app.newArray.sort(
             function(a,b){
-                return a.name < b.name
+                return b.name  < a.name ? -1 : 1
             }
         )
         app.renderArray(app.newArray)
-        console.log(app.newArray)
     }
     if (type ==='house'){
         //  same of the elements does not contain hourse 
@@ -261,7 +256,7 @@ app.sortArray = (type)=>{
 
         filteredArr.sort(
             function(a,b){
-                return a.house.name > b.house.name 
+                return a.house.name > b.house.name ? 1 : -1
             }
         )
         app.renderArray(filteredArr)
