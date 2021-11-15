@@ -62,7 +62,10 @@
 }
 
 @media (max-width: 857px) {
-  
+  nav {
+    display: flex;
+    justify-content: end;
+}
     .hamburgerMenu{
       display: block;
     }
@@ -84,7 +87,7 @@
       position:absolute;
       top: 0%;
       right: 0%;
-      background-color: white;
+      background-color: rgba(0, 0, 0, 0.918);
       flex-direction: column;
       width: 100%;
       padding: 50px 0;
@@ -93,13 +96,13 @@
 
   .navMenu li {
     margin: 20px auto;
+    text-align: center;
   }
 
   .navMenu.active2{
     display: block;
     transform: scale(100%);
     transition: 0.3s;
-    
   }
   
   a{
@@ -116,7 +119,7 @@
     .bannerLogo {
     width: 60px;
     }
-    #quizNumber {
+    .quizNumber {
       right: -7%;
       }
 }
@@ -139,9 +142,6 @@
       }
     }
   }
-//   .nextButton {
-//     margin: 39px auto;
-// }
 .houseBannerSect{
   .wrapper{
     .houses {
@@ -224,7 +224,7 @@
         .bannerLogo {
           width: 54px;
         }
-        #quizNumber {
+        .quizNumber {
           right: -9%;
           top: -44px;
           }
@@ -266,10 +266,50 @@
     }
 }
 @media (max-width: 500px) {
-  
+  header {
+    h1 {
+      font-size: 4rem;
+    }
+    form {
+      width: 80%;
+      input[type="text"] {
+        padding: 15px;
+        margin: 20px auto;
+        font-size: 1.8rem;
+      }
+    }
+  }
+  button{
+    width: 160px;
+    height: 62px;
+    padding: 8px;
+    border-radius: 295px;
+    font-size: 2rem;
+  }
+  .restartButton{
+    width: 235px;
+    height: 64px;
+    padding: 15px 35px;
+    margin: 10px auto;
+  }
+  .buttonContainer{
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      height: 60px;
+      width: 197px;
+      padding: 15px;
+      margin: 10px auto;
+      border: 1px solid;
+    }
+  }
+  .quizSection {
+    padding: 50px 20px;
+    }
   .usernameContainer {
     top: -28px;
-    left: -12%;
+    left: 0%;
     }
 
   #usernameOutput {
@@ -307,4 +347,75 @@
       }
     }
   }
+  .quizNumber {
+    right: -6%;
+    }
+}
+
+@media (max-width: 400px) {
+  header {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  form {
+    width: 100%;
+    input[type="text"] {
+      padding: 15px;
+      margin: 20px auto;
+      font-size: 1.8rem;
+    }
+  }
+  button{
+    width: 160px;
+    height: 62px;
+    padding: 8px;
+    border-radius: 295px;
+    font-size: 2rem;
+  }
+  .usernameContainer {
+    top: -36px;
+    font-size: 1.7rem;
+    }
+  .houseBannerSect {
+    .wrapper{
+      .houses{
+        img {
+          width: 82px;
+          }
+      }
+    }
+  }
+  .quizSection {
+    padding: 50px 0px;
+    }
+  .quizContainer {
+    width: 95%;
+    }
+  .quizNumber {
+    font-size: 2.5rem;
+    }
+  .characterChoiceContainer {
+    // justify-content: left;
+    align-content: baseline;
+    }
+    .nextBtnMedia {
+      right: -5px;
+      width: 35px;
+  }
+  .card {
+    width: 85%;
+    margin-left: 5px;
+    .imgWrap {
+      height: 75px;
+      p {
+        font-size: 1.4rem;
+      }
+      img {
+        height: 80px;
+        width: 70px;
+      }
+      }
+    }
+  
 }

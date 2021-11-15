@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Characters</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,14 +16,20 @@
 </head>
 <body class="historyPage">
     <nav>
-        <ul>
-            <li>
-                <a href="index.html">Play Game</a>
-            </li>
-            <li><a href="./credits.html">Credits</a></li>
-            <li><a href="./characters.html">Characters</a></li>
+        <ul class="navMenu">
+          <li>
+              <a href="index.html">Play Game</a>
+          </li>
+          <li class="current"><a href="./credits.html">Credits</a></li>
+          <li><a href="./characters.html">Characters</a></li>
         </ul>
-    </nav>
+      <!-- adding hamburger menu -->
+        <div class="hamburgerMenu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
     <header>
         <div class="wrapper">
             <!-- start of header section -->
@@ -44,22 +50,10 @@
             </div>
 
         </div>
-        <div  id="charactersArray">
-        </div>
-    <!--<div class="card" id="Jon">
-            <img src="./characterPics/Petyr.webp" alt="" class="characterimg">
-            <p>Eddard "Ned" Stark</p>
-        </div> -->
-    </section>
-    <!-- <div class="profileModalWindow">
-        <div class="profileModal">
-            <img src="./characterPics/Jon.webp" alt="">
-            <div>
-                <h3>Jon Snow</h3>
-            </div>
+        <div  id="charactersArray" class="charactersArray">
         </div>
 
-    </div> -->
+    </section>
     <div class="profileModalWindow"></div>
     <script src="./overview.js"></script>
 </body>

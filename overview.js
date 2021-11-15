@@ -254,6 +254,7 @@ app.sortArray = (type)=>{
         console.log(app.newArray)
     }
     if (type ==='house'){
+        //  same of the elements does not contain hourse 
         const filteredArr = app.newArray.filter(arr=>{
             return arr.house !== null
         })
@@ -264,13 +265,18 @@ app.sortArray = (type)=>{
             }
         )
         app.renderArray(filteredArr)
-        // console.log(filteredArr)
     }
-
 }
 
 app.init = ()=>{
     app.getCharacters();
 
 }
+app.hamburgerMenu = document.querySelector('.hamburgerMenu');
+app.navMenu = document.querySelector('.navMenu');
+
+app.hamburgerMenu.addEventListener("click", () => {
+    app.hamburgerMenu.classList.toggle("active2");
+    app.navMenu.classList.toggle("active2");
+})
 app.init();

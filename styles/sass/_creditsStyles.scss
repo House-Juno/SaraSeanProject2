@@ -13,13 +13,13 @@ header {
   }
 }
 
-#credits, #teachers, section{
+.credits, .teachers, section{
   background: #c4c4c4;
 }
 
 
 
-#credits, #teachers, h1, h2{
+.credits, .teachers, h1, h2{
   text-align: center;
 }
 
@@ -29,6 +29,7 @@ nav {
   right: 0;
   left: 0;
   padding: 40px;
+  
  
 
   ul {
@@ -50,8 +51,12 @@ nav {
               text-align: center;
               font-size: 2.5rem;
               text-transform: uppercase;
+              transition: .3s;
               
           }
+          a:hover {
+            color: white;
+        }
 
       }
   }
@@ -68,32 +73,39 @@ h2 {
   
 
 }
+.creditContainer{
+  margin: 0 auto;
+  display: flex;
 
-#credits .characterChoiceContainer{
-  justify-content: center;
-  margin: 12% 0 0 0;
-}
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  }
+// .credits .characterChoiceContainer{
+//   justify-content: center;
+//   margin: 12% 0 0 0;
+//   align-content: center;
+// }
 
-#credits .card{
-  margin: 50px;
+.credits .card{
+  margin: 30px auto;
 }
 
 //teachers section
 
 
 
-#teachers .characterChoiceContainer{
+.teachers .characterChoiceContainer{
   justify-content: center;
 
 }
 
-#teachers .card{
-  margin: 40px;
+.teachers .card{
+  margin: 20px auto;
   background-size: cover;
-  
-  
 }
-#teachers .imgWrap{
+.teachers .imgWrap{
   height: 300px;
   padding: 50px 10px;
 

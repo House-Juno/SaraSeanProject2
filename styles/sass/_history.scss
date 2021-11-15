@@ -7,29 +7,31 @@
         right: 0;
         left: 0;
         padding: 40px;
-
-        ul {
-            width: 70%;
-            margin: 0 auto;
-            padding: 0;
-            display: flex;
-            justify-content: space-evenly;
-
-            li {
-                list-style: none;
-
-                a {
-                    text-decoration: none;
-                    color: goldenrod;
-                    padding: 20px;
-                    text-align: center;
-                    font-size: 2.5rem;
-                    text-transform: uppercase;
-                    
-                }
-
+    ul {
+        width: 70%;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        
+        li {
+            list-style: none;
+    
+            a {
+                text-decoration: none;
+                color: goldenrod;
+                padding: 20px;
+                text-align: center;
+                font-size: 2.5rem;
+                text-transform: uppercase;
+                
             }
+            a:hover {
+                color: white;
+            }
+    
         }
+    }
     }
 
     header {
@@ -103,7 +105,7 @@
         }
     }
 
-    #charactersArray{
+    .charactersArray{
         width: 80%;
         margin: 0 auto;
         display: flex;
@@ -239,7 +241,7 @@
     @media (max-width: 1050px) {
 
         .historyPage{
-            #charactersArray{
+            .charactersArray{
                 width: 90%;
                 .myCard {
                     width: 31%;
@@ -252,10 +254,64 @@
             }
         }
     }
+    @media (max-width: 857px) {
+        .historyPage{
+            .hamburgerMenu{
+                display: block;
+            }
+        
+            .hamburgerMenu.active2 .bar:nth-child(3){
+                transform:  rotate(45deg) translate(-13px);
+            }
+        
+            .hamburgerMenu.active2 .bar:nth-child(2){
+                transform: translatex(-30px);
+                background: transparent;
+            }
+        
+            .hamburgerMenu.active2 .bar:nth-child(1){
+                transform: rotate(-45deg) translate(-15px);
+            }
+            nav {
+                display: flex;
+                justify-content: end;
+            }
+        
+            .navMenu {
+                position:absolute;
+                top: 0%;
+                right: 0%;
+                flex-direction: column;
+                width: 100%;
+                padding: 50px 0;
+                transform: scale(0%);
+                background-color: rgba(0, 0, 0, 0.918);
+
+            }
+        
+        .navMenu li {
+        margin: 20px auto;
+        }
+    
+        .navMenu.active2{
+        display: block;
+        transform: scale(100%);
+        transition: 0.3s;
+        }
+        
+        a{
+        text-shadow: 1px 1px black;
+        transition: .3s;
+        }
+        a:hover {
+            color: white;
+        }
+        }
+    }
     @media (max-width: 650px) {
 
         .historyPage{
-            #charactersArray{
+            .charactersArray{
                 // width: 90%;
                 .myCard {
                     width: 48%;
@@ -281,7 +337,7 @@
     @media (max-width: 571px) {
 
         .historyPage{
-            #charactersArray{
+            .charactersArray{
                 // width: 90%;
                 .myCard {
                     width: 29%;
@@ -299,6 +355,29 @@
                     img {
                         height: 160px;
                     }
+                }
+            }
+        }
+    }
+    @media (max-width: 400px) {
+        .historyPage {
+            header {
+                h1 {
+                    margin-top: 10px;
+                    font-size: 3rem;
+    
+                }
+            }
+            .charactersArray{
+                .myCard {
+                    width: 44%;
+                    }
+            }
+            .charactersSection {
+                .sortBtn{
+                    height: 40px;
+                    font-size: 1.6rem;
+                    width: 123px;
                 }
             }
         }
