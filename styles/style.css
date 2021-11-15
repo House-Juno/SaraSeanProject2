@@ -272,7 +272,7 @@ h1 {
   text-shadow: 2px 1px black;
 }
 
-.characterChoiceContainer p {
+.characterChoiceContainer p, footer p {
   font-size: 2rem;
 }
 
@@ -355,6 +355,32 @@ button:hover, .restartButton:hover {
   color: goldenrod;
   -webkit-box-shadow: 0px 5px 10px black;
           box-shadow: 0px 5px 10px black;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  background-image: url(../assets/headerBackground.jpg);
+  list-style: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+footer p {
+  padding: 20px;
+  color: white;
+}
+
+footer a {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  text-decoration: none;
+  color: goldenrod;
+}
+
+footer a:hover {
+  color: red;
+  text-decoration: underline;
 }
 
 .indexHeader {
@@ -846,6 +872,8 @@ header {
   text-align: center;
   background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.733)), to(rgba(153, 58, 58, 0))), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(153, 58, 58, 0)), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -919,7 +947,6 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
@@ -930,6 +957,24 @@ h2 {
 
 .credits .card {
   margin: 30px auto;
+}
+
+.credits {
+  min-height: 50%;
+}
+
+.teachers {
+  min-height: 50%;
+}
+
+#students.creditContainer {
+  width: 55%;
+}
+
+.teachers h1 {
+  color: goldenrod;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(black), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0));
 }
 
 .teachers .characterChoiceContainer {
@@ -1369,6 +1414,10 @@ h2 {
   .quizNumber {
     right: -6%;
   }
+
+  .characterChoiceContainer p, footer p {
+    font-size: 1.5rem;
+  }
 }
 @media (max-width: 400px) {
   header h1 {
@@ -1436,6 +1485,10 @@ h2 {
   .card .imgWrap img {
     height: 80px;
     width: 70px;
+  }
+
+  .characterChoiceContainer p, footer p {
+    font-size: 1.2rem;
   }
 }
 .historyPage {

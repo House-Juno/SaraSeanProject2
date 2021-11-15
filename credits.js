@@ -11,7 +11,7 @@ const studentsArray = [
 ]
 const teachersArray = [
 
-    "colindamelio", "EstherEdell", "darshanasen", "adrianpearman", "davidallenjordan", "JoeyDeol"  
+    "colindamelio", "EstherEdell", "darshanasen", "adrianpearman", "davidallenjordan", "JoeyDeol", "lauraeasson", "zeinabkahera", "madifuller"  
 ]
 
 const renderStudent = () => {
@@ -50,8 +50,8 @@ const renderTeachers = () => {
         card.className = "card"
         card.innerHTML = `
         <div class="imgWrap">
-              <img src="${data.avatar_url}" alt="student picture of ${data.name}" class="creditPhoto">
-              <p>${data.name}</p>
+              <img src="${data.avatar_url}" alt="student picture of ${data.name !== null ? data.name : teacher}" class="creditPhoto">
+              <p>${data.name !== null ? data.name : teacher}</p>
             </div>
           </div> 
         `

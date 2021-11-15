@@ -4,6 +4,8 @@ header {
   margin: 0 auto;
   text-align: center;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(153, 58, 58, 0)),radial-gradient(#ffffff0d, black) ,url(../assets/headerBackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,25 +78,40 @@ h2 {
 .creditContainer{
   margin: 0 auto;
   display: flex;
-
-  display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-evenly;
   }
-// .credits .characterChoiceContainer{
-//   justify-content: center;
-//   margin: 12% 0 0 0;
-//   align-content: center;
-// }
+
 
 .credits .card{
   margin: 30px auto;
 }
 
+//student section
+
+.credits{
+  min-height: 50%;
+}
+
+.teachers{
+  min-height: 50%;
+
+}
+
+#students.creditContainer{
+  width: 55%;
+ 
+}
+
+
 //teachers section
 
-
+.teachers h1{
+  color: goldenrod;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0)
+  );
+}
 
 .teachers .characterChoiceContainer{
   justify-content: center;
@@ -136,5 +153,5 @@ h2 {
   margin: 5px auto;
   background-color: goldenrod;
   border-radius: 10px;
-  
 }
+
