@@ -117,6 +117,11 @@ app.charactersArr = [
     imgName: "Mance",
     id: 1666,
   },
+  {
+    name: "Catelyn Stark",
+    imgName: "Mance",
+    id: 0,
+  },
 ];
 
 // first get all the characters featured in the quiz app
