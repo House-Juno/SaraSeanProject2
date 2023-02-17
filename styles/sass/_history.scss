@@ -1,387 +1,368 @@
-.historyPage{
-    background: #c4c4c4;
+.historyPage {
+  background: #c4c4c4;
 
-    nav {
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        padding: 40px;
+  nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 40px;
     ul {
-        width: 70%;
-        margin: 0 auto;
-        padding: 0;
-        display: flex;
-        justify-content: space-evenly;
-        
-        li {
-            list-style: none;
-    
-            a {
-                text-decoration: none;
-                color: goldenrod;
-                padding: 20px;
-                text-align: center;
-                font-size: 2.5rem;
-                text-transform: uppercase;
-                
-            }
-            a:hover {
-                color: white;
-            }
-    
-        }
-    }
-    }
-    header {
-        height: 40vh;
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(153, 58, 58, 0)),radial-gradient(#ffffff0d, black) ,url(../assets/headerBackground.jpg);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        h1 {
-            font-size: 5rem;
-        }
-    }
-    .charactersSection{
-        padding: 10px 0;
-        
-        .sortHldr {
-            display: flex;
-            justify-content: end;
-            width: 80%;
-            margin: 20px auto;
-        }
-        .sortBtnCntr {
-            
-            position: relative;
-            text-align: right;
-            display: flex;
-            flex-direction: column;
-            // justify-content: end;
-            align-items: flex-end;
-            width: 200px;
-        }
-        .sortBtn{
-            // margin: 10px auto;
-            height: 50px;
-            font-size: 2rem;
-        }
-        .dropDownMenu{
-            position: absolute;
-            color: white;
-            text-align: center;
-            background: rgb(26, 26, 26);
-            width: 200px;
-            box-shadow: 0px 15px 10px black;
-            top: 55px;
-            right: 5px;
-            height: 0px;
-            overflow: hidden;
-            transition: .2s;
-            z-index: 50;
-            a {
-                color: white;
-                display: block;
-                padding: 20px 20px;
-                text-decoration: none;
-                border: 1px solid transparent;
-                transition: .4s;
-            }
-            a:hover, a:focus{
-                color: goldenrod;
-                border: 1px solid goldenrod;
-            }
-        }
-        .sortBtnCntr:hover .dropDownMenu, .sortBtnCntr:focus .dropDownMenu {
-            height: 200px;
-            overflow: visible;
+      width: 70%;
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      justify-content: space-evenly;
 
-        }
-    }
+      li {
+        list-style: none;
 
-    .charactersArray{
-        width: 80%;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-
-        .myCard{
-            width: 23%;
-            margin: 5px;
-            height: 310px;
-            padding: 5px;
-            background-color: #ffffff;
-            position: relative;
-            cursor: pointer;
-            transition: .3s ease all;
-            .cardTop{
-                background-color: #1d1d1dda;
-                border-radius: 0px;
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                // visibility: hidden;
-                opacity: 0;
-                transition: .3s ease all;
-
-                p{
-                    font-size: 2.1rem;
-                    margin: 5px auto;
-
-                }
-                .tagName{
-                    font-size: 3.2rem;
-                    color: goldenrod;
-                }
-            }
-            
-            img {
-                height: 300px;
-                width: 100%;
-                object-fit: cover;
-                border-radius: 10px;
-                border: 3px solid transparent;
-            }
-        }
-        .myCard:hover .cardTop, .myCard:focus .cardTop{
-            // visibility: visible;
-            opacity: 1;
-        }
-    }
-    .profileModalWindow{
-        background-color: rgba(39, 39, 39, 0.719);
-        position: sticky;
-        height: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 100;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        
-        .profileModal{
-            width: 80%;
-            margin: 0 auto;
-            background-color: white;
-            display: flex;
-            flex-direction: row;
-            padding: 60px 30px;
-            position: relative;
-            overflow: auto;
-            
-            .characterDetail{
-                width: 60%;
-                margin: 0 auto;
-                h3 {
-                    font-size: 3rem;
-                    margin: 0px 0 20px 0;
-                    text-align: left;
-                }
-                p {
-                    margin: 10px 0;
-                }
-                div{
-
-                    // padding: 0px;
-                    // display: flex;
-                    // justify-content: end;
-                    // margin-top: -26px;
-                    i {
-                        font-size: 2.7rem;
-                        cursor: pointer;
-                        position: absolute;
-                        top: 20px;
-                        right: 20px;
-                    }
-                    i:hover, i:focus {
-                        color: goldenrod;
-                    }
-                    
-                }
-                span {
-                    font-weight: bolder;
-                    display: inline;
-                    margin-right: 5px;
-                }
-            }
-            img {
-                width: 35%;
-                height: 364px;
-                object-fit: cover;
-                object-position: center;
-            }
-            div {
-                // padding: 10px 20px;
-
-                ul {
-                    margin: 0;
-                }
-            }
-            li {
-                    font-family: "Playfair Display", serif;
-                    list-style: circle;
-                }
-            }
-        }
-    }
-
-    @media (max-width: 1050px) {
-
-        .historyPage{
-            .charactersArray{
-                width: 90%;
-                .myCard {
-                    width: 31%;
-                    height: 280px;
-
-                    img {
-                        height: 270px;
-                    }
-                }
-            }
-        }
-    }
-    @media (max-width: 857px) {
-        .historyPage{
-            .hamburgerMenu{
-                display: block;
-            }
-        
-            .hamburgerMenu.active2 .bar:nth-child(3){
-                transform:  rotate(45deg) translate(-13px);
-            }
-        
-            .hamburgerMenu.active2 .bar:nth-child(2){
-                transform: translatex(-30px);
-                background: transparent;
-            }
-        
-            .hamburgerMenu.active2 .bar:nth-child(1){
-                transform: rotate(-45deg) translate(-15px);
-            }
-            nav {
-                display: flex;
-                justify-content: end;
-            }
-        
-            .navMenu {
-                position:absolute;
-                top: 0%;
-                right: 0%;
-                flex-direction: column;
-                width: 100%;
-                padding: 50px 0;
-                transform: scale(0%);
-                background-color: rgba(0, 0, 0, 0.918);
-
-            }
-        
-        .navMenu li {
-        margin: 20px auto;
-        }
-    
-        .navMenu.active2{
-        display: block;
-        transform: scale(100%);
-        transition: 0.3s;
-        }
-        
-        a{
-        text-shadow: 1px 1px black;
-        transition: .3s;
+        a {
+          text-decoration: none;
+          color: goldenrod;
+          padding: 20px;
+          text-align: center;
+          font-size: 2.5rem;
+          text-transform: uppercase;
         }
         a:hover {
-            color: white;
+          color: white;
         }
-        }
+      }
     }
-    
-
-    @media (max-width: 650px) {
-
-        .historyPage{
-            .charactersArray{
-                // width: 90%;
-                .myCard {
-                    width: 48%;
-                    height: 273px;
-
-                    img {
-                        height: 262px;
-                    }
-                }
-            }
-            .profileModalWindow{
-
-                .profileModal {
-                    flex-direction: column;
-
-                    .characterDetail, img{
-                        width: 100%;
-                    }
-                }
-            }
-        }
+  }
+  header {
+    height: 40vh;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.733),
+        rgba(153, 58, 58, 0)
+      ),
+      radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: 5rem;
     }
-    @media (max-width: 571px) {
+  }
+  .charactersSection {
+    padding: 10px 0;
 
-        .historyPage{
-            .charactersArray{
-                // width: 90%;
-                .myCard {
-                    width: 29%;
-                    height: 171px;
-                    .cardTop {
-                        p{
-                            font-size: 1.8;
-                        }
-                        .tagName{
+    .sortHldr {
+      display: flex;
+      justify-content: end;
+      width: 80%;
+      margin: 20px auto;
+    }
+    .sortBtnCntr {
+      position: relative;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 200px;
+    }
+    .sortBtn {
+      height: 50px;
+      font-size: 2rem;
+    }
+    .dropDownMenu {
+      position: absolute;
+      color: white;
+      text-align: center;
+      background: rgb(26, 26, 26);
+      width: 200px;
+      box-shadow: 0px 15px 10px black;
+      top: 55px;
+      right: 5px;
+      height: 0px;
+      overflow: hidden;
+      transition: 0.2s;
+      z-index: 50;
+      a {
+        color: white;
+        display: block;
+        padding: 20px 20px;
+        text-decoration: none;
+        border: 1px solid transparent;
+        transition: 0.4s;
+      }
+      a:hover,
+      a:focus {
+        color: goldenrod;
+        border: 1px solid goldenrod;
+      }
+    }
+    .sortBtnCntr:hover .dropDownMenu,
+    .sortBtnCntr:focus .dropDownMenu {
+      height: 200px;
+      overflow: visible;
+    }
+  }
 
-                            font-size: 2.2rem;
-                        }
-                    }
+  .charactersArray {
+    width: 100%;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
-                    img {
-                        height: 160px;
-                    }
-                }
-            }
+    .myCard {
+      display: inline-block;
+      width: 315px;
+      margin: 15px;
+      height: 410px;
+      padding: 5px;
+      background-color: #ffffff;
+      position: relative;
+      cursor: pointer;
+      transition: 0.3s ease all;
+      .cardTop {
+        background-color: #1d1d1dda;
+        border-radius: 0px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        opacity: 0;
+        transition: 0.3s ease all;
+
+        p {
+          font-size: 2.1rem;
+          margin: 5px auto;
         }
+        .tagName {
+          font-size: 3.2rem;
+          color: goldenrod;
+        }
+      }
+
+      img {
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 10px;
+        border: 3px solid transparent;
+      }
+    }
+    .myCard:hover .cardTop,
+    .myCard:focus .cardTop {
+      opacity: 1;
+    }
+  }
+
+  .profileModalWindow {
+    background-color: rgba(39, 39, 39, 0.719);
+    position: sticky;
+    height: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .profileModal {
+      width: 80%;
+      margin: 0 auto;
+      background-color: white;
+      display: flex;
+      flex-direction: row;
+      padding: 60px 30px;
+      position: relative;
+      overflow: auto;
+
+      .characterDetail {
+        width: 60%;
+        margin: 0 auto;
+        h3 {
+          font-size: 3rem;
+          margin: 0px 0 20px 0;
+          text-align: left;
+        }
+        p {
+          margin: 10px 0;
+        }
+        i {
+          font-size: 2.7rem;
+          cursor: pointer;
+          position: absolute;
+          top: 20px;
+          right: 20px;
+        }
+        i:hover,
+        i:focus {
+          color: goldenrod;
+        }
+      }
+      span {
+        font-weight: bolder;
+        display: inline;
+        margin-right: 5px;
+      }
+    }
+    img {
+      width: 35%;
+      height: 750px;
+      object-fit: cover;
+      object-position: center;
     }
 
-    
-    @media (max-width: 400px) {
-        .historyPage {
-            header {
-                h1 {
-                    margin-top: 10px;
-                    font-size: 3rem;
-    
-                }
-            }
-            .charactersArray{
-                .myCard {
-                    width: 44%;
-                    }
-            }
-            .charactersSection {
-                .sortBtn{
-                    height: 40px;
-                    font-size: 1.6rem;
-                    width: 123px;
-                }
-            }
-        }
+    ul {
+      margin: 0;
     }
+  }
+  li {
+    font-family: "Playfair Display", serif;
+    list-style: circle;
+  }
+}
+
+@media (max-width: 1050px) {
+  .historyPage {
+    .charactersArray {
+      width: 90%;
+      .myCard {
+        width: 31%;
+        height: 280px;
+
+        img {
+          height: 270px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 857px) {
+  .historyPage {
+    .hamburgerMenu {
+      display: block;
+    }
+
+    .hamburgerMenu.active2 .bar:nth-child(3) {
+      transform: rotate(45deg) translate(-13px);
+    }
+
+    .hamburgerMenu.active2 .bar:nth-child(2) {
+      transform: translatex(-30px);
+      background: transparent;
+    }
+
+    .hamburgerMenu.active2 .bar:nth-child(1) {
+      transform: rotate(-45deg) translate(-15px);
+    }
+    nav {
+      display: flex;
+      justify-content: end;
+    }
+
+    .navMenu {
+      position: absolute;
+      top: 0%;
+      right: 0%;
+      flex-direction: column;
+      width: 100%;
+      padding: 50px 0;
+      transform: scale(0%);
+      background-color: rgba(0, 0, 0, 0.918);
+    }
+
+    .navMenu li {
+      margin: 20px auto;
+    }
+
+    .navMenu.active2 {
+      display: block;
+      transform: scale(100%);
+      transition: 0.3s;
+    }
+
+    a {
+      text-shadow: 1px 1px black;
+      transition: 0.3s;
+    }
+    a:hover {
+      color: white;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .historyPage {
+    .charactersArray {
+      .myCard {
+        width: 200px;
+        height: 273px;
+
+        img {
+          height: 262px;
+        }
+      }
+    }
+    .profileModalWindow {
+      .profileModal {
+        flex-direction: column;
+
+        .characterDetail,
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 571px) {
+  .historyPage {
+    .charactersArray {
+      .myCard {
+        width: 140px;
+        height: 171px;
+        .cardTop {
+          p {
+            font-size: 1.8;
+          }
+          .tagName {
+            font-size: 2.2rem;
+          }
+        }
+
+        img {
+          height: 160px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .historyPage {
+    header {
+      h1 {
+        margin-top: 10px;
+        font-size: 3rem;
+      }
+    }
+    .charactersArray {
+      .myCard {
+        width: 130px;
+        margin: 10px 10px;
+      }
+    }
+    .charactersSection {
+      .sortBtn {
+        height: 40px;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

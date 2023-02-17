@@ -1,62 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Characters</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel:wght@700&family=Playfair+Display&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel:wght@700&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
 
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" />
-</head>
-<body class="historyPage">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
+    />
+  </head>
+  <body class="historyPage">
     <nav>
-        <ul class="navMenu">
-          <li>
-              <a href="index.html">Play Game</a>
-          </li>
-          <li class="current"><a href="./credits.html">Credits</a></li>
-          <li><a href="./characters.html">Characters</a></li>
-        </ul>
+      <ul class="navMenu">
+        <li>
+          <a href="index.html">Play Game</a>
+        </li>
+        <li class="current"><a href="./credits.html">Credits</a></li>
+        <li><a href="./characters.html">Characters</a></li>
+      </ul>
       <!-- adding hamburger menu -->
-        <div class="hamburgerMenu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </nav>
+      <div class="hamburgerMenu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
     <header>
-        <div class="wrapper">
-            <!-- start of header section -->
-            <h1>Game of Thrones Characters</h1>
-            <!-- username input text field-->
-        </div>
-        <!-- end of username input text field -->
+      <div class="wrapper">
+        <!-- start of header section -->
+        <h1>Game of Thrones Characters</h1>
+        <!-- username input text field-->
+      </div>
+      <!-- end of username input text field -->
     </header>
-    <section class="charactersSection">
+    <div class="wrapper">
+      <section class="charactersSection">
         <div class="sortHldr">
-            <div class="sortBtnCntr">
-                <button class="sortBtn">sort by <i class="fas fa-caret-down"></i></button>
-                <div class="dropDownMenu">
-                    <a href="#" id="AtoZ" onclick="app.sortArray('AtoZ')">Name (A to Z)</a>
-                    <a href="#" id="ZtoA" onclick="app.sortArray('ZtoA')">Name (Z to A)</a>
-                    <a href="#" id="house" onclick="app.sortArray('house')">House</a>
-                </div>
+          <div class="sortBtnCntr">
+            <button class="sortBtn">
+              sort by <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="dropDownMenu">
+              <a href="#" id="AtoZ" onclick="app.sortArray('AtoZ')"
+                >Name (A to Z)</a
+              >
+              <a href="#" id="ZtoA" onclick="app.sortArray('ZtoA')"
+                >Name (Z to A)</a
+              >
+              <a href="#" id="house" onclick="app.sortArray('house')">House</a>
             </div>
+          </div>
         </div>
-        <div  id="charactersArray" class="charactersArray">
-        </div>
-
-    </section>
-    <div class="profileModalWindow"></div>
+        <div id="charactersArray" class="charactersArray"></div>
+      </section>
+      <div class="profileModalWindow"></div>
+    </div>
     <footer>
-        <p>Made by: Sara Munir & Sean Sipus @ <a href="https://junocollege.com/">Juno College</a></p>
-      </footer>
+      <p>
+        Made by: Sara Munir & Sean Sipus @
+        <a href="https://junocollege.com/">Juno College</a>
+      </p>
+    </footer>
     <script src="./overview.js"></script>
-</body>
+  </body>
 </html>

@@ -291,8 +291,8 @@ img {
 }
 
 .quizSection, .credits, .teachers {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#25252500), to(#000000e0)), radial-gradient(#00000034, rgba(0, 0, 0, 0.938)), url(../assets/newBackground.png);
-  background-image: linear-gradient(to top, #25252500, #000000e0), radial-gradient(#00000034, rgba(0, 0, 0, 0.938)), url(../assets/newBackground.png);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(37, 37, 37, 0)), to(rgba(0, 0, 0, 0.8784313725))), radial-gradient(rgba(0, 0, 0, 0.2039215686), rgba(0, 0, 0, 0.938)), url(../assets/newBackground.png);
+  background-image: linear-gradient(to top, rgba(37, 37, 37, 0), rgba(0, 0, 0, 0.8784313725)), radial-gradient(rgba(0, 0, 0, 0.2039215686), rgba(0, 0, 0, 0.938)), url(../assets/newBackground.png);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -316,7 +316,7 @@ button {
   width: 200px;
   height: 80px;
   padding: 10px;
-  background: radial-gradient(#0b00007e, black), url(../assets/button.webp);
+  background: radial-gradient(rgba(11, 0, 0, 0.4941176471), black), url(../assets/button.webp);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 300px;
@@ -334,7 +334,7 @@ button {
   text-shadow: 2px 2px black;
   height: 80px;
   padding: 20px 40px;
-  background: radial-gradient(#0b00007e, black), url(../assets/button.webp);
+  background: radial-gradient(rgba(11, 0, 0, 0.4941176471), black), url(../assets/button.webp);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 300px;
@@ -385,8 +385,8 @@ footer a:hover {
 
 .indexHeader {
   min-height: 100vh;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.733)), to(rgba(153, 58, 58, 0))), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(153, 58, 58, 0)), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.733)), to(rgba(153, 58, 58, 0))), radial-gradient(rgba(255, 255, 255, 0.0509803922), black), url(../assets/headerBackground.jpg);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(153, 58, 58, 0)), radial-gradient(rgba(255, 255, 255, 0.0509803922), black), url(../assets/headerBackground.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -647,7 +647,7 @@ span {
 }
 
 .correct {
-  border: 10px solid #0aac5b;
+  border: 10px solid rgb(10, 172, 91);
   background: rgba(81, 161, 121, 0.11);
 }
 
@@ -773,7 +773,7 @@ span {
           align-items: center;
 }
 .houseBannerSect .wrapper h2 {
-  color: #cfcfcf;
+  color: rgb(207, 207, 207);
   text-transform: capitalize;
   text-align: center;
 }
@@ -831,7 +831,7 @@ span {
   color: white;
   width: 200px;
   padding: 14px;
-  background: radial-gradient(#0b00007e, black), url(../assets/button.webp);
+  background: radial-gradient(rgba(11, 0, 0, 0.4941176471), black), url(../assets/button.webp);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 300px;
@@ -870,8 +870,8 @@ header {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.733)), to(rgba(153, 58, 58, 0))), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(153, 58, 58, 0)), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.733)), to(rgba(153, 58, 58, 0))), radial-gradient(rgba(255, 255, 255, 0.0509803922), black), url(../assets/headerBackground.jpg);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(153, 58, 58, 0)), radial-gradient(rgba(255, 255, 255, 0.0509803922), black), url(../assets/headerBackground.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   display: -webkit-box;
@@ -1054,8 +1054,8 @@ h2 {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.733)), to(rgba(153, 58, 58, 0))), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(153, 58, 58, 0)), radial-gradient(#ffffff0d, black), url(../assets/headerBackground.jpg);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.733)), to(rgba(153, 58, 58, 0))), radial-gradient(rgba(255, 255, 255, 0.0509803922), black), url(../assets/headerBackground.jpg);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(153, 58, 58, 0)), radial-gradient(rgba(255, 255, 255, 0.0509803922), black), url(../assets/headerBackground.jpg);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1109,7 +1109,7 @@ h2 {
   position: absolute;
   color: white;
   text-align: center;
-  background: #1a1a1a;
+  background: rgb(26, 26, 26);
   width: 200px;
   -webkit-box-shadow: 0px 15px 10px black;
           box-shadow: 0px 15px 10px black;
@@ -1130,34 +1130,33 @@ h2 {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-.historyPage .charactersSection .dropDownMenu a:hover, .historyPage .charactersSection .dropDownMenu a:focus {
+.historyPage .charactersSection .dropDownMenu a:hover,
+.historyPage .charactersSection .dropDownMenu a:focus {
   color: goldenrod;
   border: 1px solid goldenrod;
 }
-.historyPage .charactersSection .sortBtnCntr:hover .dropDownMenu, .historyPage .charactersSection .sortBtnCntr:focus .dropDownMenu {
+.historyPage .charactersSection .sortBtnCntr:hover .dropDownMenu,
+.historyPage .charactersSection .sortBtnCntr:focus .dropDownMenu {
   height: 200px;
   overflow: visible;
 }
 .historyPage .charactersArray {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 100px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .historyPage .charactersArray .myCard {
-  width: 23%;
-  margin: 5px;
-  height: 310px;
+  display: inline-block;
+  width: 315px;
+  margin: 15px;
+  height: 410px;
   padding: 5px;
   background-color: #ffffff;
   position: relative;
@@ -1166,7 +1165,7 @@ h2 {
   transition: 0.3s ease all;
 }
 .historyPage .charactersArray .myCard .cardTop {
-  background-color: #1d1d1dda;
+  background-color: rgba(29, 29, 29, 0.8549019608);
   border-radius: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1196,14 +1195,17 @@ h2 {
   color: goldenrod;
 }
 .historyPage .charactersArray .myCard img {
-  height: 300px;
+  height: 400px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
   border-radius: 10px;
   border: 3px solid transparent;
 }
-.historyPage .charactersArray .myCard:hover .cardTop, .historyPage .charactersArray .myCard:focus .cardTop {
+.historyPage .charactersArray .myCard:hover .cardTop,
+.historyPage .charactersArray .myCard:focus .cardTop {
   opacity: 1;
 }
 .historyPage .profileModalWindow {
@@ -1253,33 +1255,34 @@ h2 {
 .historyPage .profileModalWindow .profileModal .characterDetail p {
   margin: 10px 0;
 }
-.historyPage .profileModalWindow .profileModal .characterDetail div i {
+.historyPage .profileModalWindow .profileModal .characterDetail i {
   font-size: 2.7rem;
   cursor: pointer;
   position: absolute;
   top: 20px;
   right: 20px;
 }
-.historyPage .profileModalWindow .profileModal .characterDetail div i:hover, .historyPage .profileModalWindow .profileModal .characterDetail div i:focus {
+.historyPage .profileModalWindow .profileModal .characterDetail i:hover,
+.historyPage .profileModalWindow .profileModal .characterDetail i:focus {
   color: goldenrod;
 }
-.historyPage .profileModalWindow .profileModal .characterDetail span {
+.historyPage .profileModalWindow .profileModal span {
   font-weight: bolder;
   display: inline;
   margin-right: 5px;
 }
-.historyPage .profileModalWindow .profileModal img {
+.historyPage .profileModalWindow img {
   width: 35%;
-  height: 364px;
+  height: 750px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
 }
-.historyPage .profileModalWindow .profileModal div ul {
+.historyPage .profileModalWindow ul {
   margin: 0;
 }
-.historyPage .profileModalWindow .profileModal li {
+.historyPage li {
   font-family: "Playfair Display", serif;
   list-style: circle;
 }
@@ -1356,7 +1359,7 @@ h2 {
 }
 @media (max-width: 650px) {
   .historyPage .charactersArray .myCard {
-    width: 48%;
+    width: 200px;
     height: 273px;
   }
   .historyPage .charactersArray .myCard img {
@@ -1368,13 +1371,14 @@ h2 {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .historyPage .profileModalWindow .profileModal .characterDetail, .historyPage .profileModalWindow .profileModal img {
+  .historyPage .profileModalWindow .profileModal .characterDetail,
+  .historyPage .profileModalWindow .profileModal img {
     width: 100%;
   }
 }
 @media (max-width: 571px) {
   .historyPage .charactersArray .myCard {
-    width: 29%;
+    width: 140px;
     height: 171px;
   }
   .historyPage .charactersArray .myCard .cardTop p {
@@ -1393,19 +1397,18 @@ h2 {
     font-size: 3rem;
   }
   .historyPage .charactersArray .myCard {
-    width: 44%;
+    width: 130px;
+    margin: 10px 10px;
   }
   .historyPage .charactersSection .sortBtn {
     height: 40px;
     font-size: 1.6rem;
-    width: 123px;
   }
 }
 @media (max-width: 1374px) {
   .characterChoiceContainer {
     margin: 0 auto;
   }
-
   .card {
     width: 250px;
   }
@@ -1423,14 +1426,12 @@ h2 {
     width: 80%;
     margin: 0% auto;
   }
-
   .quote p {
     font-size: 2.5rem;
   }
   .quote div {
     min-height: 120px;
   }
-
   .card {
     width: 262px;
     margin: 10px 0px;
@@ -1438,7 +1439,6 @@ h2 {
   .card .imgWrap {
     height: 320px;
   }
-
   .buttonContainer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1453,11 +1453,9 @@ h2 {
     width: 70%;
     margin: 10px auto;
   }
-
   .nextBtnMedia {
     display: block;
   }
-
   .nextButton {
     display: none;
   }
@@ -1471,27 +1469,22 @@ h2 {
         -ms-flex-pack: end;
             justify-content: end;
   }
-
   .hamburgerMenu {
     display: block;
   }
-
   .hamburgerMenu.active2 .bar:nth-child(3) {
     -webkit-transform: rotate(45deg) translate(-13px);
             transform: rotate(45deg) translate(-13px);
   }
-
   .hamburgerMenu.active2 .bar:nth-child(2) {
     -webkit-transform: translatex(-30px);
             transform: translatex(-30px);
     background: transparent;
   }
-
   .hamburgerMenu.active2 .bar:nth-child(1) {
     -webkit-transform: rotate(-45deg) translate(-15px);
             transform: rotate(-45deg) translate(-15px);
   }
-
   .navMenu {
     position: absolute;
     top: 0%;
@@ -1506,12 +1499,10 @@ h2 {
     -webkit-transform: scale(0%);
             transform: scale(0%);
   }
-
   .navMenu li {
     margin: 20px auto;
     text-align: center;
   }
-
   .navMenu.active2 {
     display: block;
     -webkit-transform: scale(100%);
@@ -1519,7 +1510,6 @@ h2 {
     -webkit-transition: 0.3s;
     transition: 0.3s;
   }
-
   a {
     text-shadow: 1px 1px black;
   }
@@ -1529,11 +1519,9 @@ h2 {
     top: -21px;
     left: -6%;
   }
-
   .bannerLogo {
     width: 60px;
   }
-
   .quizNumber {
     right: -7%;
   }
@@ -1543,12 +1531,10 @@ h2 {
     top: 43%;
     right: -21px;
   }
-
   .quizContainer {
     width: 100%;
     margin: 0% auto;
   }
-
   .card {
     width: 225px;
     margin: 10px 0px;
@@ -1559,7 +1545,6 @@ h2 {
   .card .imgWrap p {
     font-size: 1.6rem;
   }
-
   .houseBannerSect .wrapper .houses {
     width: 90%;
   }
@@ -1574,7 +1559,6 @@ h2 {
   .quote div {
     min-height: 100px;
   }
-
   .card {
     width: 210px;
     margin: 10px 0px;
@@ -1585,23 +1569,18 @@ h2 {
   .card .imgWrap p {
     font-size: 1.6rem;
   }
-
   .nextButton {
     margin: 39px auto;
   }
-
   .correct {
     border: 5px solid #00fa7d;
   }
-
   .incorrect {
     border: 5px solid red;
   }
-
   .houseBannerSect .wrapper .houses img {
     width: 113px;
   }
-
   .buttonContainer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1621,37 +1600,30 @@ h2 {
   form {
     width: 74%;
   }
-
   h1 {
     font-size: 5rem;
   }
-
   .usernameContainer {
     top: -28px;
     left: -12%;
   }
-
   #usernameOutput {
     width: 32%;
     font-size: 1.8rem;
   }
-
   .bannerLogo {
     width: 54px;
   }
-
   .quizNumber {
     right: -9%;
     top: -44px;
   }
-
   .characterChoiceContainer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-
   .card {
     width: 88%;
     margin-right: auto;
@@ -1692,11 +1664,9 @@ h2 {
             align-items: center;
     padding-top: 15px;
   }
-
   .nextBtnMedia {
     right: -34px;
   }
-
   #students.creditContainer {
     width: 100%;
   }
@@ -1713,7 +1683,6 @@ h2 {
     margin: 20px auto;
     font-size: 1.8rem;
   }
-
   button {
     width: 160px;
     height: 62px;
@@ -1721,14 +1690,12 @@ h2 {
     border-radius: 295px;
     font-size: 2rem;
   }
-
   .restartButton {
     width: 235px;
     height: 64px;
     padding: 15px 35px;
     margin: 10px auto;
   }
-
   .buttonContainer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1745,28 +1712,23 @@ h2 {
     margin: 10px auto;
     border: 1px solid;
   }
-
   .quizSection {
     padding: 50px 20px;
   }
-
   .usernameContainer {
     top: -28px;
     left: 0%;
   }
-
   #usernameOutput {
     width: 32%;
     font-size: 1.8rem;
   }
-
   .characterChoiceContainer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-
   .card {
     width: 90%;
     margin: 10px auto;
@@ -1801,12 +1763,11 @@ h2 {
     margin: 0 auto;
     padding-top: 10px;
   }
-
   .quizNumber {
     right: -6%;
   }
-
-  .characterChoiceContainer p, footer p {
+  .characterChoiceContainer p,
+  footer p {
     font-size: 1.5rem;
   }
 }
@@ -1814,7 +1775,6 @@ h2 {
   header h1 {
     font-size: 3rem;
   }
-
   form {
     width: 100%;
   }
@@ -1823,7 +1783,6 @@ h2 {
     margin: 20px auto;
     font-size: 1.8rem;
   }
-
   button {
     width: 160px;
     height: 62px;
@@ -1831,38 +1790,30 @@ h2 {
     border-radius: 295px;
     font-size: 2rem;
   }
-
   .usernameContainer {
     top: -36px;
     font-size: 1.7rem;
   }
-
   .houseBannerSect .wrapper .houses img {
     width: 82px;
   }
-
   .quizSection {
     padding: 50px 0px;
   }
-
   .quizContainer {
     width: 95%;
   }
-
   .quizNumber {
     font-size: 2.5rem;
   }
-
   .characterChoiceContainer {
     -ms-flex-line-pack: baseline;
         align-content: baseline;
   }
-
   .nextBtnMedia {
     right: -5px;
     width: 35px;
   }
-
   .card {
     width: 85%;
     margin-left: 5px;
@@ -1877,8 +1828,8 @@ h2 {
     height: 80px;
     width: 70px;
   }
-
-  .characterChoiceContainer p, footer p {
+  .characterChoiceContainer p,
+  footer p {
     font-size: 1.2rem;
   }
 }
