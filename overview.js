@@ -118,9 +118,19 @@ app.charactersArr = [
     id: 1666,
   },
   {
+    name: "Ygritte",
+    imgName: "Ygritte",
+    id: 2126,
+  },
+  {
     name: "Catelyn Stark",
-    imgName: "Mance",
-    id: 0,
+    imgName: "Catelyn",
+    id: 232,
+  },
+  {
+    name: "Aemon Targaryen",
+    imgName: "Aemon",
+    id: 54,
   },
 ];
 
